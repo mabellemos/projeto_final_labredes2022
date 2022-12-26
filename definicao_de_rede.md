@@ -1,7 +1,5 @@
-
-## 2. Definições Iniciais
-Tabela 1: IP's
 ### Definições de Rede
+Tabela 1: IP's
 |Tipo|IP
 |-|-
 |Rede|10.9.24.0
