@@ -1,0 +1,32 @@
+
+## 2. Definições Iniciais
+Tabela 1: IP's
+### Definições de Rede
+|Tipo|IP
+|-|-
+|Rede|10.9.24.0
+|Máscara|255.255.255
+|Gateway|10.9.24.1
+|Broadcast|10.9.24.255
+|ns1|10.9.24.120
+|ns2|10.9.24.110
+|samba|10.9.24.103
+|gw|10.9.24.118
+|www|10.9.24.211
+|bd|10.9.24.212
+
+
+Tabela 2: Nomes das Vm's
+```
+------------------------------------------------------------------
+|    Nome da VM     |                    NOME                     |
+------------------------------------------------------------------
+| Gateway (gw)      | gw.grupo5.turma924.ifalara.local            |                     
+| Samba-SRV.        | samba.grupo5.turma924.ifalara.local         |
+| NameServer1 (ns1) | ns1.grupo5.turma924.ifalara.local           |
+| NameServer2 (ns2) | ns2.grupo5.turma924.ifalara.local           |
+| FQDN WEB          | www.grupo5.turma924.ifalara.local	          |	
+| FQDN BD           | bd.grupo5.turma924.ifalara.local            |
+------------------------------------------------------------------
+
+```
