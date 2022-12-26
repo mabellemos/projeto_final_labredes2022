@@ -2,8 +2,11 @@
 
 Altere o arquivo /etc/netplan/00-installer-config.yaml
 
+```bash
 sudo nano /etc/netplan/00-installer-config.yaml
+```
 
+```bash
 # This is the network config written by 'subiquity'
 network:
   renderer: networkd
@@ -28,3 +31,5 @@ network:
       #     - 
       #   search: [ ]
   version: 2
+
+```
