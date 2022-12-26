@@ -1,4 +1,4 @@
-#Configuração da interface ens192
+# Configuração da interface ens192
 
 Altere o arquivo /etc/netplan/00-installer-config.yaml
 
