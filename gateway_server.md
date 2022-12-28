@@ -245,16 +245,4 @@ iptables -A FORWARD -p udp -d 10.0.0.10 --dport 53 -j ACCEPT
 ![ping_gw_samba](https://user-images.githubusercontent.com/98924290/209845005-a90f2ee9-3148-4a95-8074-a2f0be1a29eb.png)
 ![ping_ns1_samba](https://user-images.githubusercontent.com/98924290/209845027-92d79309-6790-4609-8b3a-e23cbefeea6d.png)
 
-   9. Faça login no *gw* e **nslookup** para *ns1*, *ns2*, e *dh1*.
-   10. Faça login no *ns1* e **nslookup** para as máquinas *ns2*, *gw*, e *dh1*.
-   11. Faça login no *ns2* e **nslookup** para as máquinas *ns1*, *gw*, e *dh1*.
-   12. Faça login no *dh1* e **nslookup** para as máquinas *gw*, *ns1* e *ns2*.
-   13. Faça login no *gw* e **dig** para *ns1*, *ns2*, e *dh1*.
-   14. Faça login no *ns1* e **dig** para as máquinas *ns2*, *gw*, e *dh1*.
-   15. Faça login no *ns2* e **dig** para as máquinas *ns1*, *gw*, e *dh1*.
-   16. Faça login no *dh1* e **dig** para as máquinas *gw*, *ns1* e *ns2*.
-   17. Faça login no *gw* e **dig -x** para os IPs de *ns1*, *ns2*, e *dh1*.
-   18. Faça login no *ns1* e **dig -x** para os IPs de *ns2*, *gw*, e *dh1*.
-   19. Faça login no *ns2* e **dig -x** para os IPs de *ns1*, *gw*, e *dh1*.
-   20. Faça login no *dh1* e **dig -x** para os IPs de *gw*, *ns1* e *ns2*.
-
+* [Voltar ao roteiro](https://github.com/mabellemos/projeto_final_labredes2022/blob/main/README.md)
