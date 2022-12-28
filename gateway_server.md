@@ -6,12 +6,12 @@
 
 <p><center> Tabela 1: Definições da rede externa</center></p>
 
-| DESCRIÇÃO   | IP            |
-|:------------|:------------- |
-| rede        | 10.0.2.0      |
-| máscara     | 255.255.255.0 |
-| VirtualBox (gateway)     | 10.0.2.2      |
-| Broadcast   | 10.0.2.255    |
+| DESCRIÇÃO   |        IP         |
+|:------------|:------------------|
+| rede        | 10.9.24.0/24      |
+| máscara     | 255.255.255.0     |
+| VirtualBox(gateway)| 10.9.24.118|
+| Broadcast   | 10.9.24.255/24    |
 
    * As definições de rede da rede interna ao gateway server estão exemplificadas na Tabela 2.
 
@@ -19,13 +19,13 @@
 
 | DESCRIÇÃO   | IP            |
 |:------------|:------------- |
-| rede        | 10.0.0.0      |
+| rede        | 10.9.24.0/24  |
 | máscara     | 255.255.255.0 |
-| Gateway     | 10.0.0.1      |
-| Broadcast   | 10.0.0.255    |
-| NameServer1 | 10.0.0.10     |
-| NameServer2 | 10.0.0.11     |
-| samba | 10.0.0.100   |
+| Gateway     | 10.9.24.118   |
+| Broadcast   | 10.9.24.255/24|
+| NameServer1 | 10.9.24.120   |
+| NameServer2 | 10.9.24.110   |
+| samba       | 10.9.24.103   |
 
 
 
