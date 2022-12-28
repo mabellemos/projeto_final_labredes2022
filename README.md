@@ -26,24 +26,8 @@ O principal objetivo do trabalho desenvolvido é criar um ambiente de rede virtu
 # Roteiro
 Clique no link para navegar até o roteiro com os comandos utilizados para realizar as etapas da configuração de rede.
 
-* [1. Configuração do ambiente]()
+* [1. Configuração do ambiente](https://github.com/mabellemos/projeto_final_labredes2022/blob/main/configuracao_do_ambiente.md)
 * [2. Configuração Gateway Server]()
 * [3. SAMBA]()
-
-# Testes
-
-* PING
-
-   - [IP]()
-   - [HOSTNAME]()
-   - [FQDN]()
-   - [ALIASE]()
-   
-* SSH
-
-   - [IP]()
-   - [HOSTNAME]()
-   - [FQDN]()
-   - [ALIASE]()
 
 # Considerações finais
