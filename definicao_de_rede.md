@@ -22,7 +22,7 @@
 |    Nome da VM     |                    NOME                     |
 ------------------------------------------------------------------
 | Gateway (gw)      | gw.grupo1.turma924.ifalara.local            |                     
-| Samba-SRV.        | samba.grupo1.turma924.ifalara.local         |
+| Samba-SRV. (smb)  | samba.grupo1.turma924.ifalara.local         |
 | NameServer1 (ns1) | ns1.grupo1.turma924.ifalara.local           |
 | NameServer2 (ns2) | ns2.grupo1.turma924.ifalara.local           |
 | FQDN WEB          | www.grupo1.turma924.ifalara.local	          |	
