@@ -214,18 +214,28 @@ iptables -A FORWARD -p udp -d 10.0.0.10 --dport 53 -j ACCEPT
   ![ping_samba](https://user-images.githubusercontent.com/98924290/209842934-7f030dec-4146-4fdc-97b9-a4c47ad91a16.png)
 
    3. Faça login no *ns1* e **ping** para as máquinas *ns2*, *gw*, e *dh1*.
-   4. Faça login no *ns2* e **ping** para as máquinas *ns1*, *gw*, e *dh1*.
-   5. Faça login no *dh1* e **ping** para as máquinas *gw*, *ns1* e *ns2*.
-   6. Faça login no *gw* e **nslookup** para *ns1*, *ns2*, e *dh1*.
-   7. Faça login no *ns1* e **nslookup** para as máquinas *ns2*, *gw*, e *dh1*.
-   8. Faça login no *ns2* e **nslookup** para as máquinas *ns1*, *gw*, e *dh1*.
-   9. Faça login no *dh1* e **nslookup** para as máquinas *gw*, *ns1* e *ns2*.
-   10. Faça login no *gw* e **dig** para *ns1*, *ns2*, e *dh1*.
-   11. Faça login no *ns1* e **dig** para as máquinas *ns2*, *gw*, e *dh1*.
-   12. Faça login no *ns2* e **dig** para as máquinas *ns1*, *gw*, e *dh1*.
-   13. Faça login no *dh1* e **dig** para as máquinas *gw*, *ns1* e *ns2*.
-   14. Faça login no *gw* e **dig -x** para os IPs de *ns1*, *ns2*, e *dh1*.
-   15. Faça login no *ns1* e **dig -x** para os IPs de *ns2*, *gw*, e *dh1*.
-   16. Faça login no *ns2* e **dig -x** para os IPs de *ns1*, *gw*, e *dh1*.
-   17. Faça login no *dh1* e **dig -x** para os IPs de *gw*, *ns1* e *ns2*.
+ 
+ ![ping_ns2_ns1](https://user-images.githubusercontent.com/98924290/209844826-fc5bc1d9-44b1-46c3-972c-11e03e5848db.png)
+![ping_gw_ns1](https://user-images.githubusercontent.com/98924290/209844849-9612e734-5be4-4879-ab98-2ccd039100fa.png)
+![ping_samba_ns1](https://user-images.githubusercontent.com/98924290/209844873-c8238284-489c-40c2-a908-0924a787fbaf.png)
+
+   5. Faça login no *ns2* e **ping** para as máquinas *ns1*, *gw*, e *dh1*.
+
+
+   7. Faça login no *samba-srv* e **ping** para as máquinas *gw*, *ns1* e *ns2*.
+![ping_gw_samba](https://user-images.githubusercontent.com/98924290/209845005-a90f2ee9-3148-4a95-8074-a2f0be1a29eb.png)
+![ping_ns1_samba](https://user-images.githubusercontent.com/98924290/209845027-92d79309-6790-4609-8b3a-e23cbefeea6d.png)
+
+   9. Faça login no *gw* e **nslookup** para *ns1*, *ns2*, e *dh1*.
+   10. Faça login no *ns1* e **nslookup** para as máquinas *ns2*, *gw*, e *dh1*.
+   11. Faça login no *ns2* e **nslookup** para as máquinas *ns1*, *gw*, e *dh1*.
+   12. Faça login no *dh1* e **nslookup** para as máquinas *gw*, *ns1* e *ns2*.
+   13. Faça login no *gw* e **dig** para *ns1*, *ns2*, e *dh1*.
+   14. Faça login no *ns1* e **dig** para as máquinas *ns2*, *gw*, e *dh1*.
+   15. Faça login no *ns2* e **dig** para as máquinas *ns1*, *gw*, e *dh1*.
+   16. Faça login no *dh1* e **dig** para as máquinas *gw*, *ns1* e *ns2*.
+   17. Faça login no *gw* e **dig -x** para os IPs de *ns1*, *ns2*, e *dh1*.
+   18. Faça login no *ns1* e **dig -x** para os IPs de *ns2*, *gw*, e *dh1*.
+   19. Faça login no *ns2* e **dig -x** para os IPs de *ns1*, *gw*, e *dh1*.
+   20. Faça login no *dh1* e **dig -x** para os IPs de *gw*, *ns1* e *ns2*.
 
