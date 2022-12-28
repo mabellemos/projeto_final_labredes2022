@@ -21,10 +21,7 @@ Marta Mirely Nascimento dos Santos
 O principal objetivo do trabalho desenvolvido é criar um ambiente de rede virtualizado, no qual deve conter 6 máquinas virtuais com o S.O. Ubuntu Server. Visando o aprendizado dos serviços de Gateway e Samba, abordando conceitos debatidos em sala de aula, tais como o acesso via VPN a esses componentes de redes.
 
 # Visualização do ambiente de rede
-* [Tabela de nomes e IP]()
-* [Configuração de hardware]()
-* [Definições dos usuários]()
-* [Topologia física]()
+* [Definições de rede]()
 
 # Roteiro
 Clique no link para navegar até o roteiro com os comandos utilizados para realizar as etapas da configuração de rede.
