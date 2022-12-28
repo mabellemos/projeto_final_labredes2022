@@ -83,7 +83,7 @@ network:
         enp0s3:
             dhcp4: true
         enp0s8:
-            addresses: [10.0.0.1/24]
+            addresses: [10.9.24.118.1/24]
             dhcp4: false              
     version: 2
 ```
