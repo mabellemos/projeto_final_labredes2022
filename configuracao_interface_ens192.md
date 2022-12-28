@@ -56,15 +56,19 @@ ifconfig -a
 ```
 ![Comando ifconfig -a](https://user-images.githubusercontent.com/98924290/209742130-19ef7704-b3b3-4391-8b88-4d12a8e8ae69.png)
 
-##Definição dos nomes 
+## Definição dos nomes 
 
 Através do comando abaixo defina os nomes com base na tabela de definição de rede.
 
 ```bash
 hostnamectl set-hostname nome_da_tabela
 ```
-*Exemplo:* hostnamectl set-hostname gw.grupo1.turma924.ifalara.local
+*Exemplo:* 
+
+```bash
+hostnamectl set-hostname gw.grupo1.turma924.ifalara.local
+```
 
 ![Definição dos nomes da VPN](https://user-images.githubusercontent.com/98924290/209742431-9d993dbf-310e-4d38-9a58-56b1be9fe0bf.png)
 
-*[Voltar ao roteiro]()
+* [Voltar ao roteiro]()
