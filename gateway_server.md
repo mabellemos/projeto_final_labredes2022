@@ -172,10 +172,11 @@ network:
             gateway4: 10.9.24.1
             dhcp4: false
             nameservers:
-                addresses:
-                - 8.8.8.8
-                - 8.8.4.4
-                search: []
+             addresses:
+                - 10.9.24.120
+                - 10.9.24.110
+                search: [grupo1.turma924.ifalara.local]
+
     version: 2
 ```
 ![image](https://user-images.githubusercontent.com/103062784/209867713-d6b0b5e5-9288-49e2-9064-38e87de5e8b6.png)
