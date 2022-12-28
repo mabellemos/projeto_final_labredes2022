@@ -9,7 +9,6 @@ Comando para alterar o arquivo:
 ```bash
 sudo nano /etc/netplan/00-installer-config.yaml
 ```
-![Visualização do arquivo /etc/netplan/00-installer-config.yaml](https://user-images.githubusercontent.com/98924290/209741608-ec42c4aa-4850-44a5-b690-21dd281a50c6.png)
 
 ```bash
 # This is the network config written by 'subiquity'
@@ -38,6 +37,10 @@ network:
   version: 2
 
 ```
+
+![Visualização do arquivo /etc/netplan/00-installer-config.yaml](https://user-images.githubusercontent.com/98924290/209741608-ec42c4aa-4850-44a5-b690-21dd281a50c6.png)
+
+
 Após isso, aplique as alterações.
 
 ```bash
