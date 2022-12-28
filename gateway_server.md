@@ -169,7 +169,7 @@ network:
     ethernets:
         enp0s3:
             addresses: [10.9.24.118/24]
-            gateway4: 10.9.24.118.1
+            gateway4: 10.9.24.1
             dhcp4: false
             nameservers:
                 addresses:
@@ -178,6 +178,7 @@ network:
                 search: []
     version: 2
 ```
+![image](https://user-images.githubusercontent.com/103062784/209866931-251808ae-c00d-4f2c-8465-1a545e00471b.png)
 
 
 ```bash
