@@ -1,5 +1,11 @@
 # Configuração do Samba
 
+## Objetivo:
+ 
+   * Configurar um servidor compartilhamento de arquivos usando o serviço Samba no linux
+   * Acessar o **Gateway Server** via Putty no Windows e depois acessar os servidores **samba**.
+
+
 ## Nome da máquina
 
 ```
@@ -277,11 +283,3 @@ sudo chmod -R 0775 /samba/public
 sudo chgrp sambashare /samba/public
 
 ```
-   7. Cliente do compartilhamento:
-   
-    * Em um máquina com Windows (também pode usar linux os MacOS) digite no Winndows Explorer o endereço IP do servidor samba da seguinte forma:
-    **\\ip_do_maquina**. Exemplo: \\10.9.24.124
-    
-   <p><center> Figura 1: Tela do Windows Explorer com o acesso ao recurso compartilhado.</center></p>   
-   <img src="cliente_samba.png" alt="acesso pelo cliente samba"
-	title="Figura 1: acesso pelo cliente samba" width="800" height="540" /> 
