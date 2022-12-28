@@ -58,7 +58,7 @@ ifconfig -a
 
 ## Definição dos nomes 
 
-Através do comando abaixo defina os nomes com base na tabela de definição de rede.
+Através do comando abaixo defina os nomes com base na tabela Nomes das Vm´s.
 
 ```bash
 hostnamectl set-hostname nome_da_tabela
