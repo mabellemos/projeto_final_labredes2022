@@ -87,8 +87,7 @@ network:
             dhcp4: false              
     version: 2
 ```
-![image](https://user-images.githubusercontent.com/103062784/209866604-76511328-4458-4b18-9d28-63f2862d14c1.png)
-
+![image](https://user-images.githubusercontent.com/103062784/209866762-91aa53f1-b946-4a7a-a3d8-a2c61abbf114.png)
 
 ```bash
 $ sudo netplan apply
