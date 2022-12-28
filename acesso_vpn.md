@@ -13,6 +13,7 @@ cd ~
 ```
 
 ![su_redes](https://user-images.githubusercontent.com/98924290/209839934-875b0550-3728-4387-92b1-600e2a655bb1.png)
+
 ![cd_~](https://user-images.githubusercontent.com/98924290/209839958-38753caa-a37d-4539-9707-38f3c84ebcb7.png)
 
 
