@@ -1,11 +1,10 @@
 ### Definições de Rede
 
-**Tabela 1: IP's**
+**Tabela 1: IP's rede interna**
 
 |Tipo|IP
 |-|-
 |Rede|10.9.24.0/24
-|Broadcast|10.9.24.255/24
 |Máscara|255.255.255
 |Gateway|10.9.24.1
 |Broadcast|10.9.24.255
@@ -15,6 +14,21 @@
 |gw|10.9.24.118
 |www|10.9.24.211
 |bd|10.9.24.212
+
+**Tabela 1: IP's rede externa**
+
+|Tipo|IP
+|-|-
+|Rede|192.168.24.0/28
+|Máscara|255.255.255
+|Gateway|10.9.24.1
+|Broadcast|192.168.24.15/28
+|ns1|192.168.24.12
+|ns2|192.168.24.10
+|samba|192.168.24.9
+|gw|192.168.24.11
+|www|192.168.24.13
+|bd|192.168.24.14
 
 
 **Tabela 2: Definição de nomes e domínios**
