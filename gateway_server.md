@@ -160,7 +160,7 @@ $ systemctl status ufw.service
 ```bash
 $ sudo reboot
 ```
-   10. Nas máquinas SAMBA, NS1 e NS2 ativar o gateway (gateway4: 10.9.24.118.1) na interface de rede:
+   10. Nas máquinas SAMBA, NS1 e NS2 ativar o gateway (gateway4: 10.9.24.1) na interface de rede:
 ```bash
 $ sudo nano /etc/netplan/50-cloud-init.yaml
 ```
