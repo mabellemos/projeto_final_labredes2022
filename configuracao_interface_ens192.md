@@ -1,6 +1,6 @@
 # Configuração da interface ens192
 
-**Anteriormente, é necessário ter realizado as configurações da VPN no terminal linux para seguir essa etapa.
+**Anteriormente, é necessário ter realizado as configurações da VPN no terminal linux para seguir essa etapa.**
 
 Acesso a VPN e altere o arquivo /etc/netplan/00-installer-config.yaml
 
