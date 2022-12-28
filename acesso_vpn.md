@@ -10,10 +10,6 @@
 su redes
 cd ~
 ```
-*Figura 1:* A imagem mostra a troca de usuário realizada pelo comando su redes.
-
-![WhatsApp Image 2022-08-24 at 14 27 49](https://user-images.githubusercontent.com/98924290/186716041-bd108f11-1d01-4c0e-ba45-099068d9d8e2.jpeg)
-
 
 #### Pré-Requisitos para baixar o OpenVPN3
 
@@ -22,6 +18,7 @@ sudo apt install apt-transport-https -y
 sudo apt install curl -y
 sudo apt install gpg -y
 ```
+
 #### Pré-Requisitos para baixar o OpenVPN3
 ```bash
 curl -fsSL https://swupdate.openvpn.net/repos/openvpn-repo-pkg-key.pub | gpg --dearmor > ~/openvpn-repo-pkg-keyring.gpg
@@ -48,7 +45,6 @@ sudo apt install kmod-ovpn-dco
 curl -fsSL https://www.dropbox.com/s/hb8ee3kiwkhutbl/vpn924.labredes.arapiraca.ifal.edu.br.ovpn?dl=0 > ~/vpn924.labredes.arapiraca.ifal.edu.br.ovpn
 ```
 
-
 * ``CONFIG_FILE`` = arquivo de configuração .ovpn
 * ``CONFIG_NAME``= nome da configuração
 
@@ -68,13 +64,13 @@ openvpn3 config-manage --show --config vpn924.labredes --dco true
 ```bash
 openvpn3 configs-list
 ```
+
 #### Removendo um perfil de configuração instalado
 ```bash
 openvpn3 config-remove --path CONFIG_PATH
 ```
 
 * O CONFIG_PATH é o caminho da configuração listado no configs-list
-
 
 ### Manipulando a conexão VPN
 
@@ -91,6 +87,7 @@ openvpn3 session-start --config CONFIG_NAME
 ```bash
 openvpn3 session-start --config vpn924.labredes
 ```
+
 
 #### Finalizar a conexão
 ```bash
@@ -114,7 +111,6 @@ openvpn3 session-manage --config vpn924.labredes --disconnect
 ```shell
 ssh administrador@10.9.14.100
 ```
-
 
 * Verifique a tabela de rotas e encontre o gateway da interface ``tun``(VPN Tunnel)
 
