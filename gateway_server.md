@@ -204,6 +204,9 @@ iptables -A FORWARD -p tcp -d 10.0.0.100 --dport 445 -j ACCEPT
 iptables -A PREROUTING -t nat -i enp0s3 -p tcp --dport 139 -j DNAT --to 10.0.0.100:139
 iptables -A FORWARD -p tcp -d 10.0.0.100 --dport 139 -j ACCEPT
 ```
+![image](https://user-images.githubusercontent.com/103062784/209868442-64ab0113-df98-4bef-842f-731a18bf7964.png)
+
+
    b. DNS: Para permitir que o serviço de resolução de nomes (DNS) esteja disponível externamente:
         * Porta: 53
         * Interface Externa aqui é a WAN: enp0s3
