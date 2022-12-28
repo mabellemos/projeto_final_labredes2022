@@ -79,6 +79,8 @@ openvpn3 config-remove --path CONFIG_PATH
 openvpn3 sessions-list
 ```
 
+![IMG-20221123-WA0010](https://user-images.githubusercontent.com/98924290/209743404-047bcb7f-a0a5-4735-a26a-3e0bd3e01a21.jpg)
+
 #### Iniciar a conexão
 ```bash
 openvpn3 session-start --config CONFIG_NAME
@@ -87,7 +89,7 @@ openvpn3 session-start --config CONFIG_NAME
 ```bash
 openvpn3 session-start --config vpn924.labredes
 ```
-
+![IMG-20221123-WA0008](https://user-images.githubusercontent.com/98924290/209743485-63cfb575-e3d2-45c6-b8e9-55cbe48f589a.jpg)
 
 #### Finalizar a conexão
 ```bash
@@ -111,6 +113,8 @@ openvpn3 session-manage --config vpn924.labredes --disconnect
 ```shell
 ssh administrador@10.9.14.100
 ```
+
+![IMG-20221123-WA0010(1)](https://user-images.githubusercontent.com/98924290/209743541-d3b8af96-ce97-4ff8-b592-566f0c5c0583.jpg)
 
 * Verifique a tabela de rotas e encontre o gateway da interface ``tun``(VPN Tunnel)
 
