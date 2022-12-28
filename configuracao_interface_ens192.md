@@ -49,7 +49,7 @@ sudo netplan apply
 
 ![Aplicando as alterações no arquivo pelo comando: sudo netplan apply](https://user-images.githubusercontent.com/98924290/209741922-710eb30e-d424-4c57-8074-066493431daf.png)
 
-Vizualização da interface ens192 configurada pelo comando.
+Vizualização da interface ens192 configurada pelo comando:
 
 ```bash
 ifconfig -a
