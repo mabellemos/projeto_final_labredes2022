@@ -166,18 +166,23 @@ $ sudo nano /etc/netplan/50-cloud-init.yaml
 ```
 ```
 network:
-    ethernets:
-        enp0s3:
-            addresses: [10.9.24.118/24]
-            gateway4: 10.9.24.1
-            dhcp4: false
-            nameservers:
-             addresses:
-                - 10.9.24.120
-                - 10.9.24.110
-                search: [grupo1.turma924.ifalara.local]
+  renderer: networkd
+  ethernets:
+    ens160:
+      dhcp4: false
+      addresses: [10.9.24.120/24]
+      gateway4: 10.9.24.1
+      nameservers:
+         addresses:
+           - 10.9.24.120
+           - 10.9.24.110
+      #     - 
+      #   search: []
 
-    version: 2
+    ens192:
+      dhcp4: false
+      addresses: [192.168.24.12/28]
+
 ```
 ![image](https://user-images.githubusercontent.com/103062784/209871989-6b0dc6cf-84ed-4fd4-ae97-1808335ea952.png)
 
