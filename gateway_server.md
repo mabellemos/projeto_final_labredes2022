@@ -83,11 +83,11 @@ network:
         enp0s3:
             dhcp4: true
         enp0s8:
-            addresses: [10.9.24.118.1/24]
+            addresses: [10.9.24.118/24]
             dhcp4: false              
     version: 2
 ```
-![WhatsApp Image 2022-12-28 at 13 46 17](https://user-images.githubusercontent.com/103062784/209849059-9e6d4f13-4f1c-42d9-947d-6fff3766b11b.jpeg)
+![image](https://user-images.githubusercontent.com/103062784/209866604-76511328-4458-4b18-9d28-63f2862d14c1.png)
 
 
 ```bash
