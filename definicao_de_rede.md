@@ -19,12 +19,12 @@ Tabela 2: Nomes das Vm's
 ------------------------------------------------------------------
 |    Nome da VM     |                    NOME                     |
 ------------------------------------------------------------------
-| Gateway (gw)      | gw.grupo5.turma924.ifalara.local            |                     
-| Samba-SRV.        | samba.grupo5.turma924.ifalara.local         |
-| NameServer1 (ns1) | ns1.grupo5.turma924.ifalara.local           |
-| NameServer2 (ns2) | ns2.grupo5.turma924.ifalara.local           |
-| FQDN WEB          | www.grupo5.turma924.ifalara.local	          |	
-| FQDN BD           | bd.grupo5.turma924.ifalara.local            |
+| Gateway (gw)      | gw.grupo1.turma924.ifalara.local            |                     
+| Samba-SRV.        | samba.grupo1.turma924.ifalara.local         |
+| NameServer1 (ns1) | ns1.grupo1.turma924.ifalara.local           |
+| NameServer2 (ns2) | ns2.grupo1.turma924.ifalara.local           |
+| FQDN WEB          | www.grupo1.turma924.ifalara.local	          |	
+| FQDN BD           | bd.grupo1.turma924.ifalara.local            |
 ------------------------------------------------------------------
 
 ```
