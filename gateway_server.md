@@ -44,7 +44,7 @@
    1. habilitar o firewall e permitir o acesso ssh:
 ```bash
 
-![WhatsApp Image 2022-12-28 at 13 40 57](https://user-images.githubusercontent.com/103062784/209847357-6e7dc6d9-48dc-4145-b05d-0b7ee1f4bd3a.jpeg)
+!.[WhatsApp Image 2022-12-28 at 13 40 57].(https://user-images.githubusercontent.com/103062784/209847357-6e7dc6d9-48dc-4145-b05d-0b7ee1f4bd3a.jpeg)
 
  $ sudo ufw enable
  $ sudo ufw allow ssh
