@@ -34,12 +34,14 @@ OBS: após o reboot o nome da máquina aparecerá no prompt do shell
 ```bash
 $ sudo nano /etc/netplan/00-installer-config.yaml
 ```
+![WhatsApp Image 2022-12-23 at 16 51 01](https://user-images.githubusercontent.com/103062733/209842982-0889fac3-a233-4545-b445-550b5b6538f7.jpeg)
+
 
 ```
 network:
     ethernets:
         enp0s3:
-            addresses: [10.9.24.5/24]
+            addresses: [10.9.24.103/24]
             gateway4: 10.9.24.1
             dhcp4: false 
     version: 2
@@ -48,16 +50,22 @@ network:
 ```bash
 $ sudo netplan apply
 $ ifconfig -a
-$ ping 10.9.24.1
+$ ping 10.9.24.103
 ```
+![WhatsApp Image 2022-12-23 at 15 29 51](https://user-images.githubusercontent.com/103062733/209842436-95365bf1-fed7-4320-ba60-9a9b6eae9dc4.jpeg)
+
+![WhatsApp Image 2022-12-23 at 15 31 27](https://user-images.githubusercontent.com/103062733/209842494-a80a1482-9a4f-46b9-87b2-465ad38ee46f.jpeg)
+
 
    2. Na máquina Host faça login via ssh (Use Putty no Windows ou o Terminal no Linux)
 
 Exemplo: $ ssh usuário@ipremoto
 
 ```bash
-$ ssh administrador@10.9.24.5
+$ ssh administrador@10.9.24.103
 ```
+![WhatsApp Image 2022-12-23 at 15 35 35](https://user-images.githubusercontent.com/103062733/209842701-5b8487e6-3597-4912-9fe7-d56162b952dd.jpeg)
+
 
    3. instalar o servidor samba na MV samba-srv
 
@@ -65,6 +73,9 @@ $ ssh administrador@10.9.24.5
 $ sudo apt update
 $ sudo apt install samba
 ```
+![WhatsApp Image 2022-12-23 at 16 45 02](https://user-images.githubusercontent.com/103062733/209842756-c2b84a70-4643-4be6-876c-f93eec38bccc.jpeg)
+![WhatsApp Image 2022-12-23 at 16 45 40](https://user-images.githubusercontent.com/103062733/209842804-4e135e94-7327-4464-8f70-1c01b0cd4a17.jpeg)
+
    
    4. Verfificar se o samba está rodando
 
@@ -92,12 +103,16 @@ $ sudo systemctl status smbd
              └─739 /usr/sbin/smbd --foreground --no-process-group
 
 ```
+![WhatsApp Image 2022-12-23 at 16 58 00](https://user-images.githubusercontent.com/103062733/209843196-b2e697ec-4d6c-4f27-bb44-52d7dc0e2a94.jpeg)
+
 
 ```bash
 $ netstat -an | grep LISTEN
 tcp        0      0 0.0.0.0:445             0.0.0.0:*               LISTEN     
 tcp        0      0 0.0.0.0:139             0.0.0.0:*               LISTEN   
 ```
+![WhatsApp Image 2022-12-23 at 16 59 26](https://user-images.githubusercontent.com/103062733/209843243-a5903260-c4d1-4781-9f5a-7f4a6750f9aa.jpeg)
+
 
     5. Faça o backup do arquivo de configuração do samba e cria um arquivo novo somente com os comandos necessários.
     
@@ -106,6 +121,9 @@ $ sudo cp /etc/samba/smb.conf{,.backup}
 $ ls -la
 -rw-r--r--  1 root root 8942 Mar 22 20:55 smb.conf
 -rw-r--r--  1 root root 8942 Mar 23 01:42 smb.conf.backup
+
+![WhatsApp Image 2022-12-23 at 17 02 23](https://user-images.githubusercontent.com/103062733/209843506-6c9d68ae-f3f2-4e43-9813-3188f85c2c15.jpeg)
+
 $
 $ sudo bash -c 'grep -v -E "^#|^;" /etc/samba/smb.conf.backup | grep . > /etc/samba/smb.conf'
 ```
@@ -113,6 +131,8 @@ $ sudo bash -c 'grep -v -E "^#|^;" /etc/samba/smb.conf.backup | grep . > /etc/sa
 ```bash
 $ sudo nano /etc/samba/smb.conf
 ```
+![WhatsApp Image 2022-12-23 at 17 03 29](https://user-images.githubusercontent.com/103062733/209844243-743d1c2c-4de0-4c1f-a06b-f97c34acb0f5.jpeg)
+
 ```
 [global]
    workgroup = WORKGROUP
@@ -150,11 +170,13 @@ $ sudo nano /etc/samba/smb.conf
   
   6. Edite o arquivo de configuração /etc/samba/smb.conf
 
-	* adicione as interfaces da sua máquina na linha "interfaces = 127.0.0.1/8 enp0s3", separando os nomes das interfaces por espaços.
+	* adicione as interfaces da sua máquina na linha "interfaces = 10.9.24.103/8 enp0s3", separando os nomes das interfaces por espaços.
   
 ```bash
 $ sudo nano /etc/samba/smb.conf
 ```
+![WhatsApp Image 2022-12-28 at 13 46 17](https://user-images.githubusercontent.com/103062733/209845075-0daee891-5224-470d-abb7-ab72be3e7ed1.jpeg)
+
 
 ```
 [global]
@@ -162,7 +184,7 @@ $ sudo nano /etc/samba/smb.conf
    netbios name = samba-srv
    security = user
    server string = %h server (Samba, Ubuntu)
-   interfaces = 127.0.0.1/8 enp0s3
+   interfaces = 10.9.24.103/8 enp0s3
    bind interfaces only = yes
    log file = /var/log/samba/log.%m
    max log size = 1000
@@ -257,6 +279,8 @@ Enter the new value, or press ENTER for the default
 	Other []: 
 Is the information correct? [Y/n] y
 ```
+![WhatsApp Image 2022-12-28 at 13 51 23](https://user-images.githubusercontent.com/103062733/209845746-ca4e5081-801a-4e7e-8e60-9f7b298656d3.jpeg)
+
     * É necessário vincular o usuário do S.O. ao Serviço Samba. Repita a senha de aluno ou crie uma senha nova somente para acessar o compartilhamento de arquivo. Neste caso repetiremos a senha do usuário aluno
     
 ```bash
@@ -264,6 +288,9 @@ $ sudo smbpasswd -a aluno
 New SMB password:
 Retype new SMB password:
 Added user aluno.
+
+![WhatsApp Image 2022-12-28 at 13 51 23 (1)](https://user-images.githubusercontent.com/103062733/209845809-bc6980b3-d501-47fd-9123-59baec076ada.jpeg)
+
 
 $ sudo usermod -aG sambashare aluno
 
@@ -283,3 +310,5 @@ sudo chmod -R 0775 /samba/public
 sudo chgrp sambashare /samba/public
 
 ```
+![WhatsApp Image 2022-12-28 at 14 00 35](https://user-images.githubusercontent.com/103062733/209846816-544c7392-725b-4b6e-ab1b-d267f796a950.jpeg)
+
