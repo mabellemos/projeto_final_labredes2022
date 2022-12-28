@@ -289,8 +289,10 @@ New SMB password:
 Retype new SMB password:
 Added user aluno.
 
-![WhatsApp Image 2022-12-28 at 13 51 23 (1)](https://user-images.githubusercontent.com/103062733/209845809-bc6980b3-d501-47fd-9123-59baec076ada.jpeg)
+```
+![WhatsApp Image 2022-12-28 at 14 15 39](https://user-images.githubusercontent.com/103062733/209849027-d700f5e3-c00e-4da7-ad9c-beb10545c35b.jpeg)
 
+```bash
 
 $ sudo usermod -aG sambashare aluno
 
