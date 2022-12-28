@@ -21,7 +21,7 @@ Marta Mirely Nascimento dos Santos
 O principal objetivo do trabalho desenvolvido é criar um ambiente de rede virtualizado, no qual deve conter 6 máquinas virtuais com o S.O. Ubuntu Server. Visando o aprendizado dos serviços de Gateway e Samba, abordando conceitos debatidos em sala de aula, tais como o acesso via VPN a esses componentes de redes.
 
 # Visualização do ambiente de rede
-* [Definições de rede]()
+* [Definições de rede](https://github.com/mabellemos/projeto_final_labredes2022/blob/main/definicao_de_rede.md)
 
 # Roteiro
 Clique no link para navegar até o roteiro com os comandos utilizados para realizar as etapas da configuração de rede.
