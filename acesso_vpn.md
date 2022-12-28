@@ -10,6 +10,9 @@
 su redes
 cd ~
 ```
+*Figura 1:* A imagem mostra a troca de usuário realizada pelo comando su redes.
+
+![WhatsApp Image 2022-08-24 at 14 27 49](https://user-images.githubusercontent.com/98924290/186716041-bd108f11-1d01-4c0e-ba45-099068d9d8e2.jpeg)
 
 
 #### Pré-Requisitos para baixar o OpenVPN3
