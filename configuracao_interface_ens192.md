@@ -3,6 +3,7 @@
 **Anteriormente, é necessário ter realizado as configurações da VPN no terminal linux para seguir essa etapa.**
 
 Acesse a VPN e altere o arquivo /etc/netplan/00-installer-config.yaml
+
 Comando para alterar o arquivo: 
 
 ```bash
