@@ -208,10 +208,10 @@ iptables -A FORWARD -p udp -d 10.0.0.10 --dport 53 -j ACCEPT
 # Exercícios
 
    1. Faça login no *gw* e **ping** para as máquinas *ns1*, *ns2*, e *dh1*.
-  
-    ![ping_ns1](https://user-images.githubusercontent.com/98924290/209842906-b2dd808b-464d-4b66-8c08-37ef3bb07bba.png)
-    ![ping_ns2](https://user-images.githubusercontent.com/98924290/209842919-f122d675-3831-454d-99ae-262d0f5c70cc.png)
-    ![ping_samba](https://user-images.githubusercontent.com/98924290/209842934-7f030dec-4146-4fdc-97b9-a4c47ad91a16.png)
+ 
+  ![ping_ns1](https://user-images.githubusercontent.com/98924290/209842906-b2dd808b-464d-4b66-8c08-37ef3bb07bba.png)
+  ![ping_ns2](https://user-images.githubusercontent.com/98924290/209842919-f122d675-3831-454d-99ae-262d0f5c70cc.png)
+  ![ping_samba](https://user-images.githubusercontent.com/98924290/209842934-7f030dec-4146-4fdc-97b9-a4c47ad91a16.png)
 
    3. Faça login no *ns1* e **ping** para as máquinas *ns2*, *gw*, e *dh1*.
    4. Faça login no *ns2* e **ping** para as máquinas *ns1*, *gw*, e *dh1*.
