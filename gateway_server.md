@@ -46,7 +46,8 @@
  $ sudo ufw enable
  $ sudo ufw allow ssh
  
- ![WhatsApp Image 2022-12-28 at 13 40 57](https://user-images.githubusercontent.com/103062784/209846770-b6540e8c-ea6e-486b-958a-a21469e2ecb2.jpeg)
+  ![ping_ns1] (https://user-images.githubusercontent.com/103062784/209846770-b6540e8c-ea6e-486b-958a-a21469e2ecb2.jpeg)
+![WhatsApp Image 2022-12-28 at 13 40 57](https://user-images.githubusercontent.com/103062784/209847190-8f1c192d-59eb-456b-a065-1f1d9f81b851.jpeg)
 
 ```
    2. habilitar o encaminhamento de pacotes das interfaces WAN para LAN, ajustando-se os parâmetros no arquivo **/etc/ufw/sysctl.conf**, removendo-se a marca de comentário (#) da seguinte linha _# net/ipv4/ip_forwarding=1_
