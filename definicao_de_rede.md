@@ -4,7 +4,8 @@
 
 |Tipo|IP
 |-|-
-|Rede|10.9.24.0
+|Rede|10.9.24.0/24
+|Broadcast|10.9.24.255/24
 |Máscara|255.255.255
 |Gateway|10.9.24.1
 |Broadcast|10.9.24.255
@@ -16,7 +17,7 @@
 |bd|10.9.24.212
 
 
-**Tabela 2: Nomes das Vm's**
+**Tabela 2: Definição de nomes e domínios**
 ```
 ------------------------------------------------------------------
 |    Nome da VM     |                    NOME                     |
