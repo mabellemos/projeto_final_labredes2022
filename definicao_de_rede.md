@@ -1,5 +1,7 @@
 ### Definições de Rede
-Tabela 1: IP's
+
+**Tabela 1: IP's**
+
 |Tipo|IP
 |-|-
 |Rede|10.9.24.0
@@ -14,7 +16,7 @@ Tabela 1: IP's
 |bd|10.9.24.212
 
 
-Tabela 2: Nomes das Vm's
+**Tabela 2: Nomes das Vm's**
 ```
 ------------------------------------------------------------------
 |    Nome da VM     |                    NOME                     |
