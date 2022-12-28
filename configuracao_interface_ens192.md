@@ -71,4 +71,4 @@ hostnamectl set-hostname gw.grupo1.turma924.ifalara.local
 
 ![Definição dos nomes da VPN](https://user-images.githubusercontent.com/98924290/209742431-9d993dbf-310e-4d38-9a58-56b1be9fe0bf.png)
 
-* [Voltar ao roteiro]()
+* [Voltar ao roteiro](https://github.com/mabellemos/projeto_final_labredes2022/blob/main/README.md)
