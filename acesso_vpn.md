@@ -9,7 +9,12 @@
 ```bash
 su redes
 cd ~
+
 ```
+
+![su_redes](https://user-images.githubusercontent.com/98924290/209839934-875b0550-3728-4387-92b1-600e2a655bb1.png)
+![cd_~](https://user-images.githubusercontent.com/98924290/209839958-38753caa-a37d-4539-9707-38f3c84ebcb7.png)
+
 
 #### Pré-Requisitos para baixar o OpenVPN3
 
@@ -18,6 +23,9 @@ sudo apt install apt-transport-https -y
 sudo apt install curl -y
 sudo apt install gpg -y
 ```
+![apt_transport_https](https://user-images.githubusercontent.com/98924290/209839990-b4061806-9884-4b50-b9f5-906e0e28cfa0.png)
+![install_curl](https://user-images.githubusercontent.com/98924290/209840026-8f048d71-a64e-4c1d-9402-9937d1c5e4b7.png)
+![install_gpg](https://user-images.githubusercontent.com/98924290/209840033-5ad2c970-bb07-4b09-a166-69c6ea355c22.png)
 
 #### Pré-Requisitos para baixar o OpenVPN3
 ```bash
