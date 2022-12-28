@@ -179,7 +179,7 @@ network:
 
     version: 2
 ```
-![image](https://user-images.githubusercontent.com/103062784/209867713-d6b0b5e5-9288-49e2-9064-38e87de5e8b6.png)
+![image](https://user-images.githubusercontent.com/103062784/209871129-7cf7168d-ab1a-491a-a39a-5bb0906ff45a.png)
 
 
 ```bash
