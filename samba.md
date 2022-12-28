@@ -314,3 +314,5 @@ sudo chgrp sambashare /samba/public
 ```
 ![WhatsApp Image 2022-12-28 at 14 00 35](https://user-images.githubusercontent.com/103062733/209846816-544c7392-725b-4b6e-ab1b-d267f796a950.jpeg)
 
+* [Voltar ao roteiro] (https://github.com/mabellemos/projeto_final_labredes2022/blob/main/README.md)
+
