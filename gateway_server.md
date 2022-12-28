@@ -87,6 +87,8 @@ network:
             dhcp4: false              
     version: 2
 ```
+![WhatsApp Image 2022-12-28 at 13 46 17](https://user-images.githubusercontent.com/103062784/209849059-9e6d4f13-4f1c-42d9-947d-6fff3766b11b.jpeg)
+
 
 ```bash
 $ sudo netplan apply
@@ -138,6 +140,8 @@ iptables -t nat -A POSTROUTING -o enp0s3 -j MASQUERADE
 # rc.local precisa sair com 0
 exit 0
 ```
+![WhatsApp Image 2022-12-28 at 13 50 10](https://user-images.githubusercontent.com/103062784/209849124-48fb8c8a-55bb-441e-98c0-d5876fd7b791.jpeg)
+
 ---
    7. converte o arquivo em executável e o torna inicializável no boot
 ```bash
@@ -147,6 +151,7 @@ $ sudo chmod 755 /etc/rc.local
 ```bash
 $ sudo ufw status
 ```
+![WhatsApp Image 2022-12-28 at 13 51 34](https://user-images.githubusercontent.com/103062784/209849181-71578ac1-a157-441f-a499-38d7d6944337.jpeg)
 ou
 ```bash
 $ systemctl status ufw.service
