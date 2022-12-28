@@ -44,13 +44,11 @@
    1. habilitar o firewall e permitir o acesso ssh:
 ```bash
 
-!.[WhatsApp Image 2022-12-28 at 13 40 57].(https://user-images.githubusercontent.com/103062784/209847357-6e7dc6d9-48dc-4145-b05d-0b7ee1f4bd3a.jpeg)
-
  $ sudo ufw enable
  $ sudo ufw allow ssh
- 
-
 ```
+![WhatsApp Image 2022-12-28 at 13 40 57](https://user-images.githubusercontent.com/103062784/209848944-9a435042-fab2-4453-958d-a1ae100db003.jpeg)
+
    2. habilitar o encaminhamento de pacotes das interfaces WAN para LAN, ajustando-se os parâmetros no arquivo **/etc/ufw/sysctl.conf**, removendo-se a marca de comentário (#) da seguinte linha _# net/ipv4/ip_forwarding=1_
 
 ```bash
@@ -61,6 +59,8 @@ $ sudo nano /etc/ufw/sysctl.conf
 net/ipv4/ip_forwarding=1
 ...
 ```
+![WhatsApp Image 2022-12-28 at 13 41 58](https://user-images.githubusercontent.com/103062784/209848923-c8b4a1f1-a319-4731-8132-0ae52a8be6ba.jpeg)
+
 
    3. confira o nome das interfaces de rede
 ```bash
