@@ -2,7 +2,7 @@
 
 ## Relembre as definições de rede na Tabela 1
 
-[Clique para ver as definições]()
+[Clique para ver as definições](https://github.com/mabellemos/projeto_final_labredes2022/blob/main/definicao_de_rede.md)
 
 ## Siga os roteiros a configuração de cada name-server
 
@@ -16,3 +16,5 @@
    2. Faça login no *ns1* e **ping** para as máquinas *ns2*, *gw*, e *dh1*.
    3. Faça login no *ns2* e **ping** para as máquinas *ns1*, *gw*, e *dh1*.
    4. Faça login no *dh1* e **ping** para as máquinas *gw*, *ns1* e *ns2*.
+
+[Voltar ao roteiro]()
