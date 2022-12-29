@@ -112,3 +112,6 @@ ns2.labredes.ifalarapiraca.local. 604800 IN A 10.0.0.11
 ;; WHEN: Tue Oct 15 06:16:34 UTC 2019
 ;; MSG SIZE  rcvd: 153
 ```
+
+
+[Voltar ao roteiro](https://github.com/mabellemos/projeto_final_labredes2022/blob/main/README.md)
