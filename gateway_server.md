@@ -145,20 +145,13 @@ iptables -A FORWARD -i ens160 -o ens192 -m conntrack \
 # Trafego NAT sai pela interface WAN
 iptables -t nat -A POSTROUTING -o ens160 -j MASQUERADE
 
-#Recebe pacotes na porta 445 da interface externa do gw e encaminha para o ser>
-iptables -A PREROUTING -t nat -i ens160 -p tcp --dport 445 -j DNAT --to 10.0.0>
-iptables -A FORWARD -p tcp -d 10.0.0.100 --dport 445 -j ACCEPT
-
-#Recebe pacotes na porta 139 da interface externa do gw e encaminha para o ser>
-iptables -A PREROUTING -t nat -i ens160 -p tcp --dport 139 -j DNAT --to 10.0.0>
-iptables -A FORWARD -p tcp -d 10.0.0.100 --dport 139 -j ACCEPT
 # rc.local needs to exit with 0
 # rc.local precisa sair com 0
 exit 0
 
 
 ```
-![image](https://user-images.githubusercontent.com/103062784/209986814-f1e7667e-035d-448b-b6a4-4bb9fcebfa6a.png)
+![image](https://user-images.githubusercontent.com/103062784/209990062-4f4a5aea-aec1-44e6-98c2-bbe4a8e60ecb.png)
 ---
    7. converte o arquivo em executável e o torna inicializável no boot
 ```bash
