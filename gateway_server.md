@@ -115,32 +115,40 @@ iptables -P FORWARD DROP
 # Accept incoming packets from localhost and the LAN interface.
 # Aceita pacotes de entrada a partir das interfaces localhost e the LAN.
 iptables -A INPUT -i lo -j ACCEPT
-iptables -A INPUT -i enp0s8 -j ACCEPT
+iptables -A INPUT -i ens192 -j ACCEPT
 
 # Accept incoming packets from the WAN if the router initiated the connection.
 # Aceita pacotes de entrada a partir da WAN se o roteador iniciou a conexao
-iptables -A INPUT -i enp0s3 -m conntrack \
+iptables -A INPUT -i ens160 -m conntrack \
 --ctstate ESTABLISHED,RELATED -j ACCEPT
 
 # Forward LAN packets to the WAN.
 # Encaminha os pacotes da LAN para a WAN
-iptables -A FORWARD -i enp0s8 -o enp0s3 -j ACCEPT
+iptables -A FORWARD -i ens192 -o ens160 -j ACCEPT
 
 # Forward WAN packets to the LAN if the LAN initiated the connection.
 # Encaminha os pacotes WAN para a LAN se a LAN inicar a conexao.
-iptables -A FORWARD -i enp0s3 -o enp0s8 -m conntrack \
+iptables -A FORWARD -i ens160 -o ens192 -m conntrack \
 --ctstate ESTABLISHED,RELATED -j ACCEPT
 
 # NAT traffic going out the WAN interface.
 # Trafego NAT sai pela interface WAN
-iptables -t nat -A POSTROUTING -o enp0s3 -j MASQUERADE
+iptables -t nat -A POSTROUTING -o ens160 -j MASQUERADE
 
+#Recebe pacotes na porta 445 da interface externa do gw e encaminha para o ser>
+iptables -A PREROUTING -t nat -i ens160 -p tcp --dport 445 -j DNAT --to 10.0.0>
+iptables -A FORWARD -p tcp -d 10.0.0.100 --dport 445 -j ACCEPT
+
+#Recebe pacotes na porta 139 da interface externa do gw e encaminha para o ser>
+iptables -A PREROUTING -t nat -i ens160 -p tcp --dport 139 -j DNAT --to 10.0.0>
+iptables -A FORWARD -p tcp -d 10.0.0.100 --dport 139 -j ACCEPT
 # rc.local needs to exit with 0
 # rc.local precisa sair com 0
 exit 0
-```
-![WhatsApp Image 2022-12-28 at 13 50 10](https://user-images.githubusercontent.com/103062784/209849124-48fb8c8a-55bb-441e-98c0-d5876fd7b791.jpeg)
 
+
+```
+![image](https://user-images.githubusercontent.com/103062784/209986814-f1e7667e-035d-448b-b6a4-4bb9fcebfa6a.png)
 ---
    7. converte o arquivo em executável e o torna inicializável no boot
 ```bash
