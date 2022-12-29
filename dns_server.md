@@ -8,7 +8,7 @@
 
 - Configurando o Servidor [DNS Master](https://github.com/mabellemos/projeto_final_labredes2022/edit/main/dns_master.md) (nameserver1)
 
-- Configurando o Servidor [DNS Slave]() (nameserver2)
+- Configurando o Servidor [DNS Slave](https://github.com/mabellemos/projeto_final_labredes2022/blob/main/dns_slave.md) (nameserver2)
 
 # Exercícios
 
