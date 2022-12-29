@@ -352,3 +352,5 @@ $ dig -x 10.9.24.11
    14. Faça login no *ns1* e **dig -x** para os IPs de *ns2*, *gw*, e *dh1*.
    15. Faça login no *ns2* e **dig -x** para os IPs de *ns1*, *gw*, e *dh1*.
    16. Faça login no *dh1* e **dig -x** para os IPs de *gw*, *ns1* e *ns2*.
+
+[Voltar ao roteiro]()
