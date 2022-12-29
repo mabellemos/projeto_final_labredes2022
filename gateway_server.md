@@ -79,16 +79,26 @@ $ sudo nano /etc/netplan/50-cloud-init.yaml
 
 ```
 network:
-    ethernets:
-        enp0s3:
-            dhcp4: true
-        enp0s8:
-            addresses: [10.9.24.118/24]
-            dhcp4: false              
-    version: 2
-```
-![image](https://user-images.githubusercontent.com/103062784/209866762-91aa53f1-b946-4a7a-a3d8-a2c61abbf114.png)
+  renderer: networkd
+  ethernets:
+    ens160:
+      dhcp4: false
+      addresses: [10.9.24.120/24]
+      gateway4: 10.9.24.1
+      nameservers:
+         addresses:
+           - 10.9.24.120
+           - 10.9.24.110
+      #     - 
+      #   search: []
 
+    ens192:
+      dhcp4: false
+      addresses: [192.168.24.12/28]
+
+
+```
+![image](https://user-images.githubusercontent.com/103062784/209987607-c571e7de-4809-4c61-accb-c42f59322ec0.png)
 ```bash
 $ sudo netplan apply
 $ ifconfig -a
