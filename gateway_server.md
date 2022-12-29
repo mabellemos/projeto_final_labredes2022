@@ -67,8 +67,8 @@ net/ipv4/ip_forwarding=1
 $ ifconfig -a
 ```
 ```
-WAN interface: enp0s3 
-LAN interface: enp0s8
+WAN interface: ens160
+LAN interface: ens192
 ```
 
    4. Configurar as interfaces de rede (netplan) 
@@ -162,7 +162,7 @@ $ sudo reboot
 ```
    10. Nas máquinas SAMBA, NS1 e NS2 ativar o gateway (gateway4: 10.9.24.1) na interface de rede:
 ```bash
-$ sudo nano /etc/netplan/50-cloud-init.yaml
+$ sudo nano /etc/netplan/00-installer-config.yaml
 ```
 ```
 network:
@@ -183,8 +183,9 @@ network:
       dhcp4: false
       addresses: [192.168.24.12/28]
 
+
 ```
-![image](https://user-images.githubusercontent.com/103062784/209871989-6b0dc6cf-84ed-4fd4-ae97-1808335ea952.png)
+![image](https://user-images.githubusercontent.com/103062784/209986415-900d0370-3b00-433f-aeeb-79eab8ccaace.png)
 
 
 ```bash
