@@ -353,4 +353,4 @@ $ dig -x 10.9.24.11
    15. Faça login no *ns2* e **dig -x** para os IPs de *ns1*, *gw*, e *dh1*.
    16. Faça login no *dh1* e **dig -x** para os IPs de *gw*, *ns1* e *ns2*.
 
-[Voltar ao roteiro]()
+[Voltar ao roteiro](https://github.com/mabellemos/projeto_final_labredes2022/blob/main/definicao_de_rede.md)
