@@ -1,5 +1,3 @@
-
-
 # Instalação 
    * O BIND9 é a aplicação de DNS que roda no servidor.
    * Instalar o bind9 via apt-get
