@@ -28,7 +28,7 @@ Clique no link para navegar até o roteiro com os comandos utilizados para reali
 
 * [1. Configuração do ambiente](https://github.com/mabellemos/projeto_final_labredes2022/blob/main/configuracao_do_ambiente.md)
 * [2. Configuração Gateway Server](https://github.com/mabellemos/projeto_final_labredes2022/blob/main/gateway_server.md)
-* [3. SAMBA]()
+* [3. SAMBA](https://github.com/mabellemos/projeto_final_labredes2022/blob/main/samba.md)
 * [4. DNS Server](https://github.com/mabellemos/projeto_final_labredes2022/blob/main/dns_server.md)
 
 # Considerações finais
