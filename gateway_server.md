@@ -221,15 +221,16 @@ $ ifconfig -a
         * IP do servidor = 10.0.0.100
         
 ```bash
-#Recebe pacotes na porta 445 da interface externa do gw e encaminha para o servidor interno na porta 445
-iptables -A PREROUTING -t nat -i enp0s3 -p tcp --dport 445 -j DNAT --to 10.0.0.100:445
+#Recebe pacotes na porta 445 da interface externa do gw e encaminha para o ser>
+iptables -A PREROUTING -t nat -i ens160 -p tcp --dport 445 -j DNAT --to 10.0.0>
 iptables -A FORWARD -p tcp -d 10.0.0.100 --dport 445 -j ACCEPT
 
-#Recebe pacotes na porta 139 da interface externa do gw e encaminha para o servidor interno na porta 139
-iptables -A PREROUTING -t nat -i enp0s3 -p tcp --dport 139 -j DNAT --to 10.0.0.100:139
+#Recebe pacotes na porta 139 da interface externa do gw e encaminha para o ser>
+iptables -A PREROUTING -t nat -i ens160 -p tcp --dport 139 -j DNAT --to 10.0.0>
 iptables -A FORWARD -p tcp -d 10.0.0.100 --dport 139 -j ACCEPT
+
 ```
-![image](https://user-images.githubusercontent.com/103062784/209868442-64ab0113-df98-4bef-842f-731a18bf7964.png)
+![image](https://user-images.githubusercontent.com/103062784/209989645-37d26c23-fa2d-469f-bcbd-503e99eecb6a.png)
 
 
    b. DNS: Para permitir que o serviço de resolução de nomes (DNS) esteja disponível externamente:
