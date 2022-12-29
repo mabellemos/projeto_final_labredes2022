@@ -74,7 +74,7 @@ LAN interface: ens192
    4. Configurar as interfaces de rede (netplan) 
 
 ```bash
-$ sudo nano /etc/netplan/50-cloud-init.yaml 
+$ sudo nano /etc/netplan/00-installer-config.yaml
 ```
 
 ```
