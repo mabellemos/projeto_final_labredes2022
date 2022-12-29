@@ -17,4 +17,4 @@
    3. Faça login no *ns2* e **ping** para as máquinas *ns1*, *gw*, e *dh1*.
    4. Faça login no *dh1* e **ping** para as máquinas *gw*, *ns1* e *ns2*.
 
-[Voltar ao roteiro]()
+[Voltar ao roteiro](https://github.com/mabellemos/projeto_final_labredes2022/blob/main/README.md)
