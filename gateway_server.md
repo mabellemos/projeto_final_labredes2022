@@ -225,17 +225,17 @@ ifconfig -a
 ```
 
   11. Encaminhamento de portas para acesso externo à serviços da rede interna.
- 
-  ```bash
-sudo nano /etc/rc.local
-```
   
   * Para permitir que o serviço de compartilhamento de arquivos esteja disponível externamente, adicione as informações do IPTABLES sobre portas, IP e Interface no arquivo /etc/rc.local conforme o exemplo abaixo, depois reinicie a máquina:
   
    a. SAMBA: Para permitir que o serviço de compartilhamento de arquivos esteja disponível externamente:
         * Portas: 445 e 139
         * Interface Externa aqui é a WAN: enp0s3
-        * IP do servidor = 10.0.0.100
+        * IP do servidor = 192.168.24.9
+       
+ ```bash
+sudo nano /etc/rc.local
+```
         
 ```bash
 Recebe pacotes na porta 445 da interface externa do gw e encaminha para o servidor interno na porta 445
@@ -256,14 +256,15 @@ exit 0
 ```
 ![image](https://user-images.githubusercontent.com/103062784/210076631-b8b17ed2-ebbd-4a65-b4a1-9b151c5ac723.png)
 
-```bash
-sudo nano /etc/rc.local
-```
 
    b. DNS: Para permitir que o serviço de resolução de nomes (DNS) esteja disponível externamente:
         * Porta: 53
         * Interface Externa aqui é a WAN: enp0s3
-        * IP do servidor nameserver1 = 10.0.0.10
+        * IP do servidor nameserver1 = 192.168.24.9
+        
+  ```bash
+sudo nano /etc/rc.local
+```
         
 ```bash
 #Recebe pacotes na porta 53 da interface externa do gw e encaminha para o servidor DNS Master interno na >
