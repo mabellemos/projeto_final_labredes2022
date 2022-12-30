@@ -56,11 +56,11 @@ $ sudo netplan apply
 ```bash
 $ ifconfig -a
 ```
+![WhatsApp Image 2022-12-23 at 15 29 51](https://user-images.githubusercontent.com/103062733/209842436-95365bf1-fed7-4320-ba60-9a9b6eae9dc4.jpeg)
+
 ```bash
 $ ping 10.9.24.103
 ```
-![WhatsApp Image 2022-12-23 at 15 29 51](https://user-images.githubusercontent.com/103062733/209842436-95365bf1-fed7-4320-ba60-9a9b6eae9dc4.jpeg)
-
 ![WhatsApp Image 2022-12-23 at 15 31 27](https://user-images.githubusercontent.com/103062733/209842494-a80a1482-9a4f-46b9-87b2-465ad38ee46f.jpeg)
 
 
@@ -79,7 +79,6 @@ $ ssh administrador@10.9.24.103
 ```bash
 $ sudo apt install samba
 ```
-![WhatsApp Image 2022-12-23 at 16 45 02](https://user-images.githubusercontent.com/103062733/209842756-c2b84a70-4643-4be6-876c-f93eec38bccc.jpeg)
 ![WhatsApp Image 2022-12-23 at 16 45 40](https://user-images.githubusercontent.com/103062733/209842804-4e135e94-7327-4464-8f70-1c01b0cd4a17.jpeg)
 
    
@@ -90,9 +89,12 @@ $ whereis samba
 ```
 ![image](https://user-images.githubusercontent.com/103062784/210072877-6dffa29f-22ab-4566-bee5-1f8090f5f6d1.png)
 
-
+```bash
 $ sudo systemctl status smbd
-● smbd.service - Samba SMB Daemon
+```
+
+```bash
+smbd.service - Samba SMB Daemon
      Loaded: loaded (/lib/systemd/system/smbd.service; enabled; vendor preset: enabled)
      Active: active (running) since Mon 2021-03-22 23:07:17 UTC; 1h 26min ago
        Docs: man:smbd(8)
@@ -110,7 +112,7 @@ $ sudo systemctl status smbd
              └─739 /usr/sbin/smbd --foreground --no-process-group
 
 ```
-![WhatsApp Image 2022-12-23 at 16 58 00](https://user-images.githubusercontent.com/103062733/209843196-b2e697ec-4d6c-4f27-bb44-52d7dc0e2a94.jpeg)
+![image](https://user-images.githubusercontent.com/103062784/210073245-2b685775-dfb3-403a-b3a8-1875139c0c83.png)
 
 
 ```bash
