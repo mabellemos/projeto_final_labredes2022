@@ -44,15 +44,15 @@
    1. habilitar o firewall e permitir o acesso ssh:
 ```bash
 
- $ sudo ufw enable
- $ sudo ufw allow ssh
+ sudo ufw enable
+ sudo ufw allow ssh
 ```
 ![WhatsApp Image 2022-12-28 at 13 40 57](https://user-images.githubusercontent.com/103062784/209848944-9a435042-fab2-4453-958d-a1ae100db003.jpeg)
 
    2. habilitar o encaminhamento de pacotes das interfaces WAN para LAN, ajustando-se os parâmetros no arquivo **/etc/ufw/sysctl.conf**, removendo-se a marca de comentário (#) da seguinte linha _# net/ipv4/ip_forwarding=1_
 
 ```bash
-$ sudo nano /etc/ufw/sysctl.conf
+sudo nano /etc/ufw/sysctl.conf
 ``` 
 ```
 ...
@@ -64,7 +64,7 @@ net/ipv4/ip_forwarding=1
 
    3. confira o nome das interfaces de rede
 ```bash
-$ ifconfig -a
+ifconfig -a
 ```
 ```
 WAN interface: ens160
@@ -74,7 +74,7 @@ LAN interface: ens192
    4. Configurar as interfaces de rede (netplan) 
 
 ```bash
-$ sudo nano /etc/netplan/00-installer-config.yaml
+ sudo nano /etc/netplan/00-installer-config.yaml
 ```
 
 ```
@@ -83,22 +83,31 @@ network:
   ethernets:
     ens160:
       dhcp4: false
-      addresses: [10.9.24.120/24]
+      addresses: [10.9.24.120/28]
       gateway4: 10.9.24.1
       nameservers:
          addresses:
            - 10.9.24.120
            - 10.9.24.110
-      #     - 
-      #   search: []
+           - 10.9.24.103
+           - 10.9.24.118
+         search: [grupo1.turma924.ifalara.local]
 
     ens192:
       dhcp4: false
       addresses: [192.168.24.12/28]
+      nameservers:
+         addresses:
+           - 10.9.24.120
+           - 10.9.24.110
+           - 10.9.24.103
+           - 10.9.24.118
+         search: [grupo1.turma924.ifalara.local]
 
+  version: 2
 
 ```
-![image](https://user-images.githubusercontent.com/103062784/209987607-c571e7de-4809-4c61-accb-c42f59322ec0.png)
+![image](https://user-images.githubusercontent.com/103062784/210075229-352dfc4d-686e-459e-9ba9-2df0a77e1b26.png)
 ```bash
 $ sudo netplan apply
 $ ifconfig -a
