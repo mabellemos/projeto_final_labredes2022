@@ -113,21 +113,20 @@ smbd.service - Samba SMB Daemon
  5. Faça o backup do arquivo de configuração do samba e cria um arquivo novo somente com os comandos necessários.
     
 ```bash
-$ sudo cp /etc/samba/smb.conf{,.backup}
-$ ls -la
--rw-r--r--  1 root root 8942 Mar 22 20:55 smb.conf
--rw-r--r--  1 root root 8942 Mar 23 01:42 smb.conf.backup
-
-$ sudo bash -c 'grep -v -E "^#|^;" /etc/samba/smb.conf.backup | grep . > /etc/samba/smb.conf'
+ sudo cp /etc/samba/smb.conf{,.backup}
 ```
-![WhatsApp Image 2022-12-23 at 17 02 23](https://user-images.githubusercontent.com/103062733/209843506-6c9d68ae-f3f2-4e43-9813-3188f85c2c15.jpeg)
+```bash
+ ls -la
+sudo bash -c 'grep -v -E "^#|^;" /etc/samba/smb.conf.backup | grep . > /etc/samba/smb.conf'
+```
+![image](https://user-images.githubusercontent.com/103062784/210073807-6b419dfe-a39e-4423-a640-c7c4575ce369.png)
 
 6. Edite o arquivo de configuração /etc/samba/smb.conf
 
    * adicione as interfaces da sua máquina na linha "interfaces = ens160".
   
 ```bash
-$ sudo nano /etc/samba/smb.conf
+sudo nano /etc/samba/smb.conf
 ```
 .
 ``` bash
