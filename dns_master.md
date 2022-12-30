@@ -201,12 +201,12 @@ $ sudo systemctl restart bind9
 ```
 
 ### Configuração dos clientes
-   * Configure o dns no nas máquina ns1, ns2 e us adicionando os campos abaixo na interface de rede local deses servidores. Observe que na máquina gw essa configuração deve ser inserida na interface de rede local (enp0s8)
+   * Configure o dns no nas máquina ns1, ns2 e us adicionando os campos abaixo na interface de rede local deses servidores. Observe que na máquina gw essa configuração deve ser inserida na interface de rede local (enp160)
 ```
             nameservers: 
                 addresses:
-                - 10.9.24.10
-                - 10.9.24.11
+                - 10.9.24.120
+                - 10.9.24.110
                 search: [grupo1.turma924.ifalara.local]
 ```
    * O arquivo de configuração do netplan ficará da seguinte forma:
