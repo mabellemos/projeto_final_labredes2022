@@ -225,6 +225,10 @@ ifconfig -a
 ```
 
   11. Encaminhamento de portas para acesso externo à serviços da rede interna.
+ 
+  ```bash
+sudo nano /etc/rc.local
+```
   
   * Para permitir que o serviço de compartilhamento de arquivos esteja disponível externamente, adicione as informações do IPTABLES sobre portas, IP e Interface no arquivo /etc/rc.local conforme o exemplo abaixo, depois reinicie a máquina:
   
@@ -252,6 +256,9 @@ exit 0
 ```
 ![image](https://user-images.githubusercontent.com/103062784/210076631-b8b17ed2-ebbd-4a65-b4a1-9b151c5ac723.png)
 
+```bash
+sudo nano /etc/rc.local
+```
 
    b. DNS: Para permitir que o serviço de resolução de nomes (DNS) esteja disponível externamente:
         * Porta: 53
@@ -259,10 +266,12 @@ exit 0
         * IP do servidor nameserver1 = 10.0.0.10
         
 ```bash
-#Recebe pacotes na porta 53 da interface externa do gw e encaminha para o servidor DNS Master interno na porta 53
-iptables -A PREROUTING -t nat -i enp0s3 -p udp --dport 53 -j DNAT --to 10.0.0.10:53
-iptables -A FORWARD -p udp -d 10.0.0.10 --dport 53 -j ACCEPT
+#Recebe pacotes na porta 53 da interface externa do gw e encaminha para o servidor DNS Master interno na >
+iptables -A PREROUTING -t nat -i enp0s3 -p udp --dport 53 -j DNAT --to 192.168.24.9:53
+iptables -A FORWARD -p udp -d 192.168.24.9 --dport 53 -j ACCEPT
+
 ```
+![image](https://user-images.githubusercontent.com/103062784/210076959-dd4cacfb-5d88-44a2-9043-1467072079ff.png)
 
 # Exercícios
 
