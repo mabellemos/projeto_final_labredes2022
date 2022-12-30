@@ -28,16 +28,15 @@ $ reboot
 ```
 OBS: após o reboot o nome da máquina aparecerá no prompt do shell
 
-```
     1. Definir o IP da rede interna para o Samba-SRV
 
 ```bash
 $ sudo nano /etc/netplan/00-installer-config.yaml
 ```
+
 ![WhatsApp Image 2022-12-23 at 16 51 01](https://user-images.githubusercontent.com/103062733/209842982-0889fac3-a233-4545-b445-550b5b6538f7.jpeg)
 
-
-```
+```bash 
 network:
     ethernets:
         enp0s3:
@@ -50,6 +49,12 @@ network:
 ```bash
 $ sudo netplan apply
 $ ifconfig -a
+$ ping 10.9.24.103
+```
+```bash
+$ ifconfig -a
+```
+```bash
 $ ping 10.9.24.103
 ```
 ![WhatsApp Image 2022-12-23 at 15 29 51](https://user-images.githubusercontent.com/103062733/209842436-95365bf1-fed7-4320-ba60-9a9b6eae9dc4.jpeg)
