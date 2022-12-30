@@ -57,13 +57,13 @@ $ sudo nano /etc/bind/named.conf.local
 zone "grupo1.turma924.ifalara.local" {
   type slave;
   file "/etc/bind/zones/db.grupo1.turma924.ifalarapiraca.local";
-  masters { 10.9.14.10; };
+  masters { 10.9.24.120; };
 };
 
 zone "24.9.10.in-addr.arpa" IN {
   type slave;
   file "/etc/bind/zones/db.10.9.24.rev";
-  masters { 10.9.14.10; };
+  masters { 10.9.24.120; };
 };
 ```
 
