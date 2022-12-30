@@ -95,7 +95,7 @@ network:
 
     ens192:
       dhcp4: false
-      addresses: [192.168.24.12/28]
+      addresses: [192.168.24.11/28]
       nameservers:
          addresses:
            - 10.9.24.120
@@ -107,7 +107,7 @@ network:
   version: 2
 
 ```
-![image](https://user-images.githubusercontent.com/103062784/210075229-352dfc4d-686e-459e-9ba9-2df0a77e1b26.png)
+![image](https://user-images.githubusercontent.com/103062784/210076305-ee9a3f96-35a6-46ea-a027-b43ffd2fcd3c.png)
 ```bash
 sudo netplan apply
 ```
@@ -192,7 +192,7 @@ network:
   ethernets:
     ens160:
       dhcp4: false
-      addresses: [10.9.24.120/28]
+      addresses: [10.9.24.118/28]
       gateway4: 10.9.24.1
       nameservers:
          addresses:
@@ -204,7 +204,7 @@ network:
 
     ens192:
       dhcp4: false
-      addresses: [192.168.24.12/28]
+      addresses: [192.168.24.11/28]
       nameservers:
          addresses:
            - 10.9.24.120
@@ -215,8 +215,7 @@ network:
 
   version: 2
 ```
-![image](https://user-images.githubusercontent.com/103062784/210075229-352dfc4d-686e-459e-9ba9-2df0a77e1b26.png)
-
+![image](https://user-images.githubusercontent.com/103062784/210076337-d695c1dc-627d-4eb8-998b-c86e2e72c622.png)
 
 ```bash
  sudo netplan apply
