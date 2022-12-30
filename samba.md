@@ -189,16 +189,16 @@ sudo nano /etc/samba/smb.conf
    #force directory mode = 0777
 ```
 
-    * Crie um usuário do S.O para que possa utilizar o compartilhamento samba:
-    * usuário: aluno
-    * senha: alunoifal
+   * Crie um usuário do S.O para que possa utilizar o compartilhamento samba:
+   * usuário: aluno
+   * senha: alunoifal
     
 ```bash
 sudo adduser aluno
 ```
 ![WhatsApp Image 2022-12-28 at 13 51 23](https://user-images.githubusercontent.com/103062733/209845746-ca4e5081-801a-4e7e-8e60-9f7b298656d3.jpeg)
 
-    * É necessário vincular o usuário do S.O. ao Serviço Samba. Repita a senha de aluno ou crie uma senha nova somente para acessar o compartilhamento de arquivo. Neste caso repetiremos a senha do usuário aluno
+  * É necessário vincular o usuário do S.O. ao Serviço Samba. Repita a senha de aluno ou crie uma senha nova somente para acessar o compartilhamento de arquivo. Neste caso repetiremos a senha do usuário aluno
     
 ```bash
  sudo smbpasswd -a aluno
@@ -210,7 +210,7 @@ sudo adduser aluno
  sudo usermod -aG sambashare aluno
 ```
     
-    * O Samba já está instalado, agora precisamos criar um diretório para compartilhá-lo em rede.
+  * O Samba já está instalado, agora precisamos criar um diretório para compartilhá-lo em rede.
    
 ```bash
 mkdir /home/<username>/sambashare/
