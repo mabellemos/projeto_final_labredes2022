@@ -83,7 +83,7 @@ network:
   ethernets:
     ens160:
       dhcp4: false
-      addresses: [10.9.24.120/28]
+      addresses: [10.9.24.118/28]
       gateway4: 10.9.24.1
       nameservers:
          addresses:
@@ -234,16 +234,23 @@ ifconfig -a
         * IP do servidor = 10.0.0.100
         
 ```bash
-#Recebe pacotes na porta 445 da interface externa do gw e encaminha para o ser>
-iptables -A PREROUTING -t nat -i ens160 -p tcp --dport 445 -j DNAT --to 10.0.0>
-iptables -A FORWARD -p tcp -d 10.0.0.100 --dport 445 -j ACCEPT
+Recebe pacotes na porta 445 da interface externa do gw e encaminha para o servidor interno na porta 445
+iptables -A PREROUTING -t nat -i ens160 -p tcp --dport 445 -j DNAT --to 192.168.24.9:445
+iptables -A FORWARD -p tcp -d 192.168.24.9 --dport 445 -j ACCEPT
 
-#Recebe pacotes na porta 139 da interface externa do gw e encaminha para o ser>
-iptables -A PREROUTING -t nat -i ens160 -p tcp --dport 139 -j DNAT --to 10.0.0>
-iptables -A FORWARD -p tcp -d 10.0.0.100 --dport 139 -j ACCEPT
+#Recebe pacotes na porta 139 da interface externa do gw e encaminha para o servidor interno na porta 139
+iptables -A PREROUTING -t nat -i ens160 -p tcp --dport 139 -j DNAT --to 192.168.24.9:139
+iptables -A FORWARD -p tcp -d 192.168.24.9 --dport 139 -j ACCEPT
+
+
+
+# rc.local needs to exit with 0
+# rc.local precisa sair com 0
+exit 0
+
 
 ```
-![image](https://user-images.githubusercontent.com/103062784/209989645-37d26c23-fa2d-469f-bcbd-503e99eecb6a.png)
+![image](https://user-images.githubusercontent.com/103062784/210076631-b8b17ed2-ebbd-4a65-b4a1-9b151c5ac723.png)
 
 
    b. DNS: Para permitir que o serviço de resolução de nomes (DNS) esteja disponível externamente:
