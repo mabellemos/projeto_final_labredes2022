@@ -138,7 +138,7 @@ $ sudo nano /etc/samba/smb.conf
 $ sudo nano /etc/samba/smb.conf
 ```
 
-```
+``` bash
 [global]
    workgroup = WORKGROUP
    server string = %h server (Samba, Ubuntu)
@@ -187,17 +187,10 @@ $ sudo nano /etc/samba/smb.conf
    guest only = yes
    force user = nobody
 
-   
-
+ 
+```
 ![image](https://user-images.githubusercontent.com/103062784/210071502-c02d4e25-bc17-4913-9f03-8f6014972c17.png)
 
-
-  
-  
- 
-
-
-```
 ```
     * Renicie o serviço smbd
     
