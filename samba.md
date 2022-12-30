@@ -129,12 +129,9 @@ $ sudo bash -c 'grep -v -E "^#|^;" /etc/samba/smb.conf.backup | grep . > /etc/sa
 ```bash
  6. Edite o arquivo de configuração /etc/samba/smb.conf
 
-	* adicione as interfaces da sua máquina na linha "interfaces = ens160".
+ * adicione as interfaces da sua máquina na linha "interfaces = ens160".
   
 ```bash
-$ sudo nano /etc/samba/smb.conf
-```
-![WhatsApp Image 2022-12-28 at 13 46 17](https://user-images.githubusercontent.com/103062733/209845075-0daee891-5224-470d-abb7-ab72be3e7ed1.jpeg)
 $ sudo nano /etc/samba/smb.conf
 ```
 
