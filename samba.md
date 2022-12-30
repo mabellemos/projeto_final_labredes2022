@@ -129,12 +129,12 @@ $ sudo bash -c 'grep -v -E "^#|^;" /etc/samba/smb.conf.backup | grep . > /etc/sa
 ```bash
 $ sudo nano /etc/samba/smb.conf
 ```
-![WhatsApp Image 2022-12-23 at 17 03 29](https://user-images.githubusercontent.com/103062733/209844243-743d1c2c-4de0-4c1f-a06b-f97c34acb0f5.jpeg)
 
 ```
 [global]
    workgroup = WORKGROUP
    server string = %h server (Samba, Ubuntu)
+   interfaces = ens160
    log file = /var/log/samba/log.%m
    max log size = 1000
    logging = file
@@ -143,7 +143,7 @@ $ sudo nano /etc/samba/smb.conf
    obey pam restrictions = yes
    unix password sync = yes
    passwd program = /usr/bin/passwd %u
-   passwd chat = *Enter\snew\s*\spassword:* %n\n *Retype\snew\s*\spassword:* %n\n *password\supdated\ssuccessfully* .
+   passwd chat = *Enter\snew\s*\spassword:* %n\n *Retype\snew\s*\spassword:* %n>
    pam password change = yes
    map to guest = bad user
    usershare allow guests = yes
@@ -161,7 +161,27 @@ $ sudo nano /etc/samba/smb.conf
    browseable = yes
    read only = yes
    guest ok = no
-```
+[homes]
+   comment = Home Directories
+   browseable = yes
+   read only = no
+   create mask = 0700
+   directory mask = 0700
+   valid users = %S
+ [public]
+   comment = public anonymous access
+   path = /samba/public
+   browsable =yes
+   create mask = 0660
+   directory mask = 0771
+   writable = yes
+   guest ok = yes
+   guest only = yes
+   force user = nobody
+
+   
+
+![image](https://user-images.githubusercontent.com/103062784/210071502-c02d4e25-bc17-4913-9f03-8f6014972c17.png)
 
 
   
