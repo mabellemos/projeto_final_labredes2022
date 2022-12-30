@@ -88,26 +88,6 @@ whereis samba
 ```bash
  sudo systemctl status smbd
 ```
-
-```bash
-smbd.service - Samba SMB Daemon
-     Loaded: loaded (/lib/systemd/system/smbd.service; enabled; vendor preset: enabled)
-     Active: active (running) since Mon 2021-03-22 23:07:17 UTC; 1h 26min ago
-       Docs: man:smbd(8)
-             man:samba(7)
-             man:smb.conf(5)
-    Process: 691 ExecStartPre=/usr/share/samba/update-apparmor-samba-profile (code=exited, status=0/SUCCESS)
-   Main PID: 697 (smbd)
-     Status: "smbd: ready to serve connections..."
-      Tasks: 4 (limit: 460)
-     Memory: 17.5M
-     CGroup: /system.slice/smbd.service
-             ├─697 /usr/sbin/smbd --foreground --no-process-group
-             ├─737 /usr/sbin/smbd --foreground --no-process-group
-             ├─738 /usr/sbin/smbd --foreground --no-process-group
-             └─739 /usr/sbin/smbd --foreground --no-process-group
-
-```
 ![image](https://user-images.githubusercontent.com/103062784/210073245-2b685775-dfb3-403a-b3a8-1875139c0c83.png)
 
  5. Faça o backup do arquivo de configuração do samba e cria um arquivo novo somente com os comandos necessários.
@@ -216,37 +196,14 @@ sudo nano /etc/samba/smb.conf
 ```bash
 sudo adduser aluno
 ```
-
-```bash
-Adding user `aluno' ...
-Adding new group `aluno' (1001) ...
-Adding new user `aluno' (1001) with group `aluno' ...
-Creating home directory `/home/aluno' ...
-Copying files from `/etc/skel' ...
-New password: 
-Retype new password: 
-passwd: password updated successfully
-Changing the user information for aluno
-Enter the new value, or press ENTER for the default
-	Full Name []: Aluno de SRED no IFAL Arapiraca
-	Room Number []: 
-	Work Phone []: 
-	Home Phone []: 
-	Other []: 
-Is the information correct? [Y/n] y
-```
 ![WhatsApp Image 2022-12-28 at 13 51 23](https://user-images.githubusercontent.com/103062733/209845746-ca4e5081-801a-4e7e-8e60-9f7b298656d3.jpeg)
 
     * É necessário vincular o usuário do S.O. ao Serviço Samba. Repita a senha de aluno ou crie uma senha nova somente para acessar o compartilhamento de arquivo. Neste caso repetiremos a senha do usuário aluno
     
 ```bash
  sudo smbpasswd -a aluno
-```
-```bash
-New SMB password:
-Retype new SMB password:
-Added user aluno.
-```
+ ```
+
 ![WhatsApp Image 2022-12-28 at 14 15 39](https://user-images.githubusercontent.com/103062733/209849027-d700f5e3-c00e-4da7-ad9c-beb10545c35b.jpeg)
 
 ```bash
@@ -256,17 +213,25 @@ Added user aluno.
     * O Samba já está instalado, agora precisamos criar um diretório para compartilhá-lo em rede.
    
 ```bash
-$ mkdir /home/<username>/sambashare/
-$ sudo mkdir -p /samba/public
+mkdir /home/<username>/sambashare/
+```
+```bash
+sudo mkdir -p /samba/public
 ```
     * configure as permissões para que qualquer um possa acessar o compartilhamento público.
 
 ```bash
 sudo chown -R nobody:nogroup /samba/public
-sudo chmod -R 0775 /samba/public
-sudo chgrp sambashare /samba/public
-
 ```
+
+```bash
+sudo chmod -R 0775 /samba/public
+```
+
+```bash
+sudo chgrp sambashare /samba/public
+```
+
 ![WhatsApp Image 2022-12-28 at 14 00 35](https://user-images.githubusercontent.com/103062733/209846816-544c7392-725b-4b6e-ab1b-d267f796a950.jpeg)
 
 * [Voltar ao roteiro](https://github.com/mabellemos/projeto_final_labredes2022/blob/main/README.md)
