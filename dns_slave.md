@@ -7,19 +7,19 @@
 ```base
 $ sudo nano /etc/netplan/00-instaler-config.yaml 
 ```
-* Exemplo para a turma 914, para a turma 924 basta utilizar o prefixo de rede 10.9.24
+
 ```
 network:
     ethernets:
         ens160:                        # interface local
-            addresses: [10.9.14.11/24]  # ip/mascara
+            addresses: [10.9.24.110/28]  # ip/mascara
             gateway4: 10.9.14.1         # ip do gateway
             dhcp4: false               # 'false' para conf. estatica 
             nameservers:               # servidores dns
                 addresses:
-                - 10.9.14.10            # ip do ns1
-                - 10.9.14.11            # ip do ns2
-                search: [labredes.ifalarapiraca.local]  # domínio
+                - 10.9.14.120            # ip do ns1
+                - 10.9.14.110            # ip do ns2
+                search: [grupo1.turma924.ifalara.local]  # domínio
     version: 2
 ```
 
@@ -54,15 +54,15 @@ $ sudo systemctl enable bind9
 $ sudo nano /etc/bind/named.conf.local
 ```
 ```
-zone "labredes.ifalarapiraca.local" {
+zone "grupo1.turma924.ifalara.local" {
   type slave;
-  file "/etc/bind/zones/db.labredes.ifalarapiraca.local";
+  file "/etc/bind/zones/db.grupo1.turma924.ifalarapiraca.local";
   masters { 10.9.14.10; };
 };
 
-zone "14.9.10.in-addr.arpa" IN {
+zone "24.9.10.in-addr.arpa" IN {
   type slave;
-  file "/etc/bind/zones/db.10.9.14.rev";
+  file "/etc/bind/zones/db.10.9.24.rev";
   masters { 10.9.14.10; };
 };
 ```
@@ -78,11 +78,11 @@ $ sudo named-checkconf
    * Veja a resposta em **ANSWER SECTION**.
 
 ```bash
-$ dig @10.0.0.11 ns1.labredes.ifalarapiraca.local
+$ dig @10.9.24.120 ns1.grupo1.turma924.labredes.ifalara.local
 ```
 
 ```
-; <<>> DiG 9.11.3-1ubuntu1.9-Ubuntu <<>> @10.0.0.11 ns1.labredes.ifalarapiraca.local
+; <<>> DiG 9.11.3-1ubuntu1.9-Ubuntu <<>> @10.9.24.120 ns1.grupo1.turma924.ifalara.local
 ; (1 server found)
 ;; global options: +cmd
 ;; Got answer:
@@ -98,17 +98,17 @@ $ dig @10.0.0.11 ns1.labredes.ifalarapiraca.local
 ;ns1.labredes.ifalarapiraca.local. IN A
 
 ;; ANSWER SECTION:
-ns1.labredes.ifalarapiraca.local. 604800 IN A 10.0.0.10
+ns1.grupo1.turma924.ifalara.local. 604800 IN A 10.9.24.120
 
 ;; AUTHORITY SECTION:
-labredes.ifalarapiraca.local. 604800 IN NS  ns2.labredes.ifalarapiraca.local.
-labredes.ifalarapiraca.local. 604800 IN NS  ns1.labredes.ifalarapiraca.local.
+grupo1.turma924.ifalara.local. 604800 IN NS  ns2.grupo1.turma924.ifalara.local.
+grupo1.turma924.ifalara.local. 604800 IN NS  ns1.grupo1.turma924.ifalara.local.
 
 ;; ADDITIONAL SECTION:
-ns2.labredes.ifalarapiraca.local. 604800 IN A 10.0.0.11
+ns2.grupo1.turma924.ifalara.local. 604800 IN A 10.9.24.110
 
 ;; Query time: 0 msec
-;; SERVER: 10.0.0.11#53(10.0.0.11)
+;; SERVER: 10.9.24.110#53(10.9.24.110)
 ;; WHEN: Tue Oct 15 06:16:34 UTC 2019
 ;; MSG SIZE  rcvd: 153
 ```
