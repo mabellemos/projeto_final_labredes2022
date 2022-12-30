@@ -119,6 +119,9 @@ smbd.service - Samba SMB Daemon
  ls -la
 sudo bash -c 'grep -v -E "^#|^;" /etc/samba/smb.conf.backup | grep . > /etc/samba/smb.conf'
 ```
+```bash
+sudo bash -c 'grep -v -E "^#|^;" /etc/samba/smb.conf.backup | grep . > /etc/samba/smb.conf'
+```
 ![image](https://user-images.githubusercontent.com/103062784/210073807-6b419dfe-a39e-4423-a640-c7c4575ce369.png)
 
 6. Edite o arquivo de configuração /etc/samba/smb.conf
@@ -185,12 +188,12 @@ sudo nano /etc/samba/smb.conf
   * Renicie o serviço smbd
     
 ```bash
-$ sudo systemctl restart smbd
+ sudo systemctl restart smbd
 ```
 
    * modifica a pasta /samba/public para acesso a somente usuários do grupo sambashare
    
-```
+```bash
 [public]
    comment = public anonymous access
    path = /samba/public
@@ -211,7 +214,10 @@ $ sudo systemctl restart smbd
     * senha: alunoifal
     
 ```bash
-$ sudo adduser aluno
+sudo adduser aluno
+```
+
+```bash
 Adding user `aluno' ...
 Adding new group `aluno' (1001) ...
 Adding new user `aluno' (1001) with group `aluno' ...
@@ -234,18 +240,17 @@ Is the information correct? [Y/n] y
     * É necessário vincular o usuário do S.O. ao Serviço Samba. Repita a senha de aluno ou crie uma senha nova somente para acessar o compartilhamento de arquivo. Neste caso repetiremos a senha do usuário aluno
     
 ```bash
-$ sudo smbpasswd -a aluno
+ sudo smbpasswd -a aluno
+```
+```bash
 New SMB password:
 Retype new SMB password:
 Added user aluno.
-
 ```
 ![WhatsApp Image 2022-12-28 at 14 15 39](https://user-images.githubusercontent.com/103062733/209849027-d700f5e3-c00e-4da7-ad9c-beb10545c35b.jpeg)
 
 ```bash
-
-$ sudo usermod -aG sambashare aluno
-
+ sudo usermod -aG sambashare aluno
 ```
     
     * O Samba já está instalado, agora precisamos criar um diretório para compartilhá-lo em rede.
