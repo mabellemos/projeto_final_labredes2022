@@ -52,14 +52,14 @@ $ sudo mkdir /etc/bind/zones
    * o arquivo db.labredes.ifalarapiraca.local conterá os nomes das máquinas do domínio labredes.ifalarapiraca.local
    * Para isso faremos uma cópia do arquivo /etc/bind/db.empty
 ```bash
-$ sudo cp /etc/bind/db.empty /etc/bind/zones/db.labredes.ifalarapiraca.local 
+$ sudo cp /etc/bind/db.empty /etc/bind/zones/db.grupo1.turma924.ifalara.local 
 ```
 
 ##### zona reversa
    * Utilizado quando não se conhece o IP mas sabe-se o nome do host.
    * vamos criar a zona reversa a partir do arquivo /etc/bind/db.127
 ```bash
-  $ sudo cp /etc/bind/db.127 /etc/bind/zones/db.10.9.14.rev
+  $ sudo cp /etc/bind/db.127 /etc/bind/zones/db.10.9.24.rev
 ```
 
    * Assim, o arquivo **db.10.9.24.rev** conterá a zona reversa da rede 10.9.24.0. 
@@ -67,49 +67,49 @@ $ sudo cp /etc/bind/db.empty /etc/bind/zones/db.labredes.ifalarapiraca.local
    
 ### Editar arquivos db:
 
-   #### zona direta: db.labredes.ifalarapiraca.local
-   * edite o arquivo  **db.labredes.ifalarapiraca.local** para adicionar as informações do seu domínio
+   #### zona direta: db.grupo1.turma924.ifalara.local
+   * edite o arquivo  **db.grupo1.turma924.ifalara.local** para adicionar as informações do seu domínio
       * As linhas iniciadas com **;** são comentários 
       
 ```bash   
-    $ sudo nano db.labredes.ifalarapiraca.local 
+    $ sudo nano db.grupo1.turma924.ifalara.local 
 ```
 ---
 ```
 ;
 ; BIND data file for internal network
 ;
-$ORIGIN labredes.ifalarapiraca.local.
+$ORIGIN grupo1.turma924.ifalara.local.
 $TTL	3h
-@	IN	SOA	ns1.labredes.ifalarapiraca.local. root.labredes.ifalarapiraca.local. (
+@	IN	SOA	ns1.grupo1.turma924.ifalara.local. root.grupo1.turma924.ifalara.local. (
 			      1		; Serial
 			      3h	; Refresh
 			      1h	; Retry
 			      1w	; Expire
 			      1h )	; Negative Cache TTL
 ;nameservers
-@	IN	NS	ns1.labredes.ifalarapiraca.local.
-@	IN	NS	ns2.labredes.ifalarapiraca.local.
+@	IN	NS	ns1.grupo1.turma924.ifalara.local.
+@	IN	NS	ns2.grupo1.turma924.ifalara.local.
 ;hosts
-ns1.labredes.ifalarapiraca.local.	  IN	A	10.9.14.10
-ns2.labredes.ifalarapiraca.local.	  IN	A	10.9.14.11
-dh1.labredes.ifalarapiraca.local.	  IN	A	10.9.14.100
-gw.labredes.ifalarapiraca.local.	  IN 	A	10.9.14.1          
-desktophost1    CNAME     dh1                 ; CNAME é um apelido
+ns1.grupo1.turma924.ifalara.local.	  IN	A	10.9.24.120
+ns2.grupo1.turma924.ifalara.local.	  IN	A	10.9.24.110
+smb.grupo1.turma924.ifalara.local.	  IN	A	10.9.24.103
+gw.grupo1.turma924.ifalara.local.	  IN 	A	10.9.24.118          
+desktophost1    CNAME     smb                 ; CNAME é um apelido
 ```
 
 ---
-   #### zona reversa: db.10.9.14.rev
-   * edite o arquivo **db.10.9.14.rev** para adcionar as informações da zona reversa
+   #### zona reversa: db.10.9.24.rev
+   * edite o arquivo **db.10.9.24.rev** para adcionar as informações da zona reversa
       * As linhas iniciadas com **;** são comentários.
    
 ---
 ```
 ;
-; BIND reverse data file of reverse zone for local area network 10.9.14.0/24
+; BIND reverse data file of reverse zone for local area network 10.9.24.0/28
 ;
 $TTL    604800
-@       IN      SOA     labredes.ifalarapiraca.local. root.labredes.ifalarapiraca.local. (
+@       IN      SOA     grupo1.turma924.ifalara.local. root.grupo1.turma924.ifalara.local. (
                               1         ; Serial
                          604800         ; Refresh
                           86400         ; Retry
@@ -117,14 +117,14 @@ $TTL    604800
                          604800 )       ; Negative Cache TTL
 
 ; name servers
-@      IN      NS      ns1.labredes.ifalarapiraca.local.
-@      IN      NS      ns2.labredes.ifalarapiraca.local.
+@      IN      NS      ns1.grupo1.turma924.ifalara.local.
+@      IN      NS      ns2.grupo1.turma924.ifalara.local.
 
 ; PTR Records
-10   IN      PTR     ns1.labredes.ifalarapiraca.local.              ; 10.9.14.10
-11   IN      PTR     ns2.labredes.ifalarapiraca.local.              ; 10.9.14.11
-100  IN      PTR     dh1.labredes.ifalarapiraca.local.    	    ; 10.9.14.100
-1    IN      PTR     gw.labredes.ifalarapiraca.local.               ; 10.9.14.1
+10   IN      PTR     ns1.grupo1.turma924.ifalara.local.              ; 10.9.24.120
+11   IN      PTR     ns2.grupo1.turma924.ifalara.local.              ; 10.9.24.110
+100  IN      PTR     smb.grupo1.turma924.ifalara.local.    	    ; 10.9.24.103
+1    IN      PTR     gw.grupo1.turma924.ifalara.local.               ; 10.9.24.118
 ```
 ---
 
@@ -144,17 +144,17 @@ $ sudo nano /etc/bind/named.conf.local
 // organization
 //include "/etc/bind/zones.rfc1918";
 
-zone "labredes.ifalarapiraca.local" {
+zone "grupo1.turma924.ifalara.local" {
 	type master;
-	file "/etc/bind/zones/db.labredes.ifalarapiraca.local";
-	allow-transfer{ 10.9.14.11; };  
+	file "/etc/bind/zones/db.grupo1.turma924.ifalara.local";
+	allow-transfer{ 10.9.24.110; };  
 	allow-query{any;};
 };
 
-zone "14.9.10.in-addr.arpa" IN {
+zone "24.9.10.in-addr.arpa" IN {
 	type master;
-	file "/etc/bind/zones/db.10.9.14.rev";
-	allow-transfer{ 10.9.14.11; };
+	file "/etc/bind/zones/db.10.9.24.rev";
+	allow-transfer{ 10.9.24.110; };
 };
 ```
 ---
@@ -171,8 +171,8 @@ $sudo named-checkconf
 
 ```bash
 $ cd /etc/bind/zones
-$ sudo named-checkzone labredes.ifalarapiraca.local db.labredes.ifalarapiraca.local
-zone labredes.ifalarapiraca.local/IN: loaded serial 1
+$ sudo named-checkzone grupo1.labredes.ifalara.local db.grupo1.turma924.ifalara.local
+zone grupo1.turma924.ifalara.local/IN: loaded serial 1
 OK
 $ sudo named-checkzone 24.9.10.in-addr.arpa db.10.9.24.rev
 zone 24.9.10.in-addr.arpa/IN: loaded serial 1
@@ -207,24 +207,24 @@ $ sudo systemctl restart bind9
                 addresses:
                 - 10.9.24.10
                 - 10.9.24.11
-                search: [labredes.ifalarapiraca.local]
+                search: [grupo1.turma924.ifalara.local]
 ```
    * O arquivo de configuração do netplan ficará da seguinte forma:
 
 ```bash
-$ sudo nano /etc/netplan/50-cloud-init.yaml 
+$ sudo nano /etc/netplan/00-installer-config.yaml 
 
 network:
     ethernets:
         enp0s3:                        # interface local
-            addresses: [10.9.24.10/24]  # ip/mascara
+            addresses: [10.9.24.120/24]  # ip/mascara
             gateway4: 10.9.24.1         # ip do gateway
             dhcp4: false               # 'false' para conf. estatica 
             nameservers:               # servidores dns
                 addresses:
-                - 10.9.24.10            # ip do ns1
-                - 10.9.24.11            # ip do ns2
-                search: [labredes.ifalarapiraca.local]  # domínio
+                - 10.9.24.120            # ip do ns1
+                - 10.9.24.110            # ip do ns2
+                search: [grupo1.turma924.ifalara.local]  # domínio
     version: 2
 ```
 
@@ -237,7 +237,7 @@ network:
 #### Teste de configuração como cliente. 
    * Observe se os campos **DNS servers** e **DNS Domain** estão corretos.
 ```bash
-$ systemd-resolve --status enp0s3
+$ systemd-resolve --status enp160
 ```
 ```
 Link 2 (enp0s3)
@@ -246,19 +246,19 @@ Link 2 (enp0s3)
 MulticastDNS setting: no
       DNSSEC setting: no
     DNSSEC supported: no
-         DNS Servers: 10.9.24.10
-                      10.9.24.11
-         DNS Domain: labredes.ifalarapiraca.local
+         DNS Servers: 10.9.24.120
+                      10.9.24.110
+         DNS Domain: grupo1.turma924.ifalara.local
 ```
 ---
 #### Teste o serviço DNS para a máquina ns1. 
    * Veja a resposta em **ANSWER SECTION**.
 ```bash
-$ dig ns1.labredes.ifalarapiraca.local
+$ dig ns1.grupo1.turma924.ifalara.local
 ```
 
 ```
-; <<>> DiG 9.11.3-1ubuntu1.9-Ubuntu <<>> ns1.labredes.ifalarapiraca.local
+; <<>> DiG 9.11.3-1ubuntu1.9-Ubuntu <<>> ns1.grupo1.turma924.ifalara.local
 ;; global options: +cmd
 ;; Got answer:
 ;; WARNING: .local is reserved for Multicast DNS
@@ -269,10 +269,10 @@ $ dig ns1.labredes.ifalarapiraca.local
 ;; OPT PSEUDOSECTION:
 ; EDNS: version: 0, flags:; udp: 65494
 ;; QUESTION SECTION:
-;ns1.labredes.ifalarapiraca.local. IN	A
+;ns1.grupo1.turma924.ifalara.local. IN	A
 
 ;; ANSWER SECTION:
-ns1.labredes.ifalarapiraca.local. 5204 IN A	10.9.24.120
+ns1.grupo1.turma924.ifalara.local. 5204 IN A	10.9.24.120
 
 ;; Query time: 0 msec
 ;; SERVER: 127.0.0.53#53(127.0.0.53)
@@ -298,7 +298,7 @@ $ dig -x 10.9.24.120
 ;10.9.24.120.in-addr.arpa.		IN	PTR
 
 ;; ANSWER SECTION:
-10.9.24.120.in-addr.arpa.	6141	IN	PTR	ns1.labredes.ifalarapiraca.local.
+10.9.24.120.in-addr.arpa.	6141	IN	PTR	ns1.grupo1.turma924.ifalara.local.
 
 ;; Query time: 0 msec
 ;; SERVER: 127.0.0.53#53(127.0.0.53)
@@ -308,10 +308,10 @@ $ dig -x 10.9.24.120
 ---
 #### Teste o serviço DNS reverso para a máquina ns2. 
 ```bash  
-$ dig -x 10.9.24.11
+$ dig -x 10.9.24.110
 ```
 ```
-; <<>> DiG 9.11.3-1ubuntu1.9-Ubuntu <<>> -x 10.9.24.11
+; <<>> DiG 9.11.3-1ubuntu1.9-Ubuntu <<>> -x 10.9.24.110
 ;; global options: +cmd
 ;; Got answer:
 ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 56462
@@ -320,10 +320,10 @@ $ dig -x 10.9.24.11
 ;; OPT PSEUDOSECTION:
 ; EDNS: version: 0, flags:; udp: 65494
 ;; QUESTION SECTION:
-;11.24.9.10.in-addr.arpa.		IN	PTR
+;110.24.9.10.in-addr.arpa.		IN	PTR
 
 ;; ANSWER SECTION:
-11.24.9.10.in-addr.arpa.	6177	IN	PTR	ns2.labredes.ifalarapiraca.local.
+110.24.9.10.in-addr.arpa.	6177	IN	PTR	ns2.grupo1.turma924.ifalara.local.
 
 ;; Query time: 0 msec
 ;; SERVER: 127.0.0.53#53(127.0.0.53)
@@ -331,24 +331,5 @@ $ dig -x 10.9.24.11
 ;; MSG SIZE  rcvd: 97
 ```
 ---
-
-# Exercícios
-
-   1. Faça login no *gw* e **ping** para as máquinas *ns1*, *ns2*, e *dh1*.
-   2. Faça login no *ns1* e **ping** para as máquinas *ns2*, *gw*, e *dh1*.
-   3. Faça login no *ns2* e **ping** para as máquinas *ns1*, *gw*, e *dh1*.
-   4. Faça login no *dh1* e **ping** para as máquinas *gw*, *ns1* e *ns2*.
-   5. Faça login no *gw* e **nslookup** para *ns1*, *ns2*, e *dh1*.
-   6. Faça login no *ns1* e **nslookup** para as máquinas *ns2*, *gw*, e *dh1*.
-   7. Faça login no *ns2* e **nslookup** para as máquinas *ns1*, *gw*, e *dh1*.
-   8. Faça login no *dh1* e **nslookup** para as máquinas *gw*, *ns1* e *ns2*.
-   9. Faça login no *gw* e **dig** para *ns1*, *ns2*, e *dh1*.
-   10. Faça login no *ns1* e **dig** para as máquinas *ns2*, *gw*, e *dh1*.
-   11. Faça login no *ns2* e **dig** para as máquinas *ns1*, *gw*, e *dh1*.
-   12. Faça login no *dh1* e **dig** para as máquinas *gw*, *ns1* e *ns2*.
-   13. Faça login no *gw* e **dig -x** para os IPs de *ns1*, *ns2*, e *dh1*.
-   14. Faça login no *ns1* e **dig -x** para os IPs de *ns2*, *gw*, e *dh1*.
-   15. Faça login no *ns2* e **dig -x** para os IPs de *ns1*, *gw*, e *dh1*.
-   16. Faça login no *dh1* e **dig -x** para os IPs de *gw*, *ns1* e *ns2*.
 
 [Voltar ao roteiro](https://github.com/mabellemos/projeto_final_labredes2022/blob/main/definicao_de_rede.md)
