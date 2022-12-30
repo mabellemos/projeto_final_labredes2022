@@ -26,6 +26,10 @@ Conferir os nomes das MV conforme a Tabela 1. Editar o nome da máquina
 $ sudo hostnamectl set-hostname samba-srv
 $ reboot
 ```
+
+```bash
+$ reboot
+```
 OBS: após o reboot o nome da máquina aparecerá no prompt do shell
 
     1. Definir o IP da rede interna para o Samba-SRV
@@ -48,8 +52,6 @@ network:
 
 ```bash
 $ sudo netplan apply
-$ ifconfig -a
-$ ping 10.9.24.103
 ```
 ```bash
 $ ifconfig -a
@@ -75,7 +77,6 @@ $ ssh administrador@10.9.24.103
    3. instalar o servidor samba na MV samba-srv
 
 ```bash
-$ sudo apt update
 $ sudo apt install samba
 ```
 ![WhatsApp Image 2022-12-23 at 16 45 02](https://user-images.githubusercontent.com/103062733/209842756-c2b84a70-4643-4be6-876c-f93eec38bccc.jpeg)
@@ -86,7 +87,8 @@ $ sudo apt install samba
 
 ```bash
 $ whereis samba
-samba: /usr/sbin/samba /usr/lib/x86_64-linux-gnu/samba /etc/samba /usr/share/samba /usr/share/man/man8/samba.8.gz /usr/share/man/man7/samba.7.gz
+```
+![image](https://user-images.githubusercontent.com/103062784/210072877-6dffa29f-22ab-4566-bee5-1f8090f5f6d1.png)
 
 
 $ sudo systemctl status smbd
