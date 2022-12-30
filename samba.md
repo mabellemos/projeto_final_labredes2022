@@ -28,14 +28,14 @@ $ reboot
 ```
 
 ```bash
-$ reboot
+reboot
 ```
 OBS: após o reboot o nome da máquina aparecerá no prompt do shell
 
-    1. Definir o IP da rede interna para o Samba-SRV
+ 1. Definir o IP da rede interna para o Samba-SRV
 
 ```bash
-$ sudo nano /etc/netplan/00-installer-config.yaml
+ sudo nano /etc/netplan/00-installer-config.yaml
 ```
 ```bash 
 network:
@@ -46,17 +46,17 @@ network:
             dhcp4: false 
     version: 2
 ```
-![WhatsApp Image 2022-12-23 at 16 51 01](https://user-images.githubusercontent.com/103062733/209842982-0889fac3-a233-4545-b445-550b5b6538f7.jpeg)
+![image](https://user-images.githubusercontent.com/103062784/210073537-d63dfd35-45d6-4036-89c7-bcf6c28a0c6b.png)
 ```bash
-$ sudo netplan apply
+sudo netplan apply
 ```
 ```bash
-$ ifconfig -a
+ifconfig -a
 ```
 ![WhatsApp Image 2022-12-23 at 15 29 51](https://user-images.githubusercontent.com/103062733/209842436-95365bf1-fed7-4320-ba60-9a9b6eae9dc4.jpeg)
 
 ```bash
-$ ping 10.9.24.103
+ping 10.9.24.103
 ```
 ![WhatsApp Image 2022-12-23 at 15 31 27](https://user-images.githubusercontent.com/103062733/209842494-a80a1482-9a4f-46b9-87b2-465ad38ee46f.jpeg)
 
@@ -66,7 +66,7 @@ $ ping 10.9.24.103
 Exemplo: $ ssh usuário@ipremoto
 
 ```bash
-$ ssh administrador@10.9.24.103
+ssh administrador@10.9.24.103
 ```
 ![WhatsApp Image 2022-12-23 at 15 35 35](https://user-images.githubusercontent.com/103062733/209842701-5b8487e6-3597-4912-9fe7-d56162b952dd.jpeg)
 
@@ -74,7 +74,7 @@ $ ssh administrador@10.9.24.103
    3. instalar o servidor samba na MV samba-srv
 
 ```bash
-$ sudo apt install samba
+sudo apt install samba
 ```
 ![WhatsApp Image 2022-12-23 at 16 45 40](https://user-images.githubusercontent.com/103062733/209842804-4e135e94-7327-4464-8f70-1c01b0cd4a17.jpeg)
 
@@ -82,7 +82,7 @@ $ sudo apt install samba
    4. Verfificar se o samba está rodando
 
 ```bash
-$ whereis samba
+whereis samba
 ```
 ![image](https://user-images.githubusercontent.com/103062784/210072877-6dffa29f-22ab-4566-bee5-1f8090f5f6d1.png)
 
