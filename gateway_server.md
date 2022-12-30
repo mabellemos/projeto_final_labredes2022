@@ -109,13 +109,15 @@ network:
 ```
 ![image](https://user-images.githubusercontent.com/103062784/210075229-352dfc4d-686e-459e-9ba9-2df0a77e1b26.png)
 ```bash
-$ sudo netplan apply
-$ ifconfig -a
+sudo netplan apply
+```
+```bash
+sudo netplan apply
 ```
 
    5. no ubuntu 18.04 o arquivo /etc/rc.local não existe mais. Então é necessário recriá-lo.
 ```bash
-$ sudo nano /etc/rc.local
+sudo nano /etc/rc.local
 ```
 
    6. A seguir, adicione o seguinte script no arquivo [/etc/rc.local](rc.local)
@@ -164,25 +166,25 @@ exit 0
 ---
    7. converte o arquivo em executável e o torna inicializável no boot
 ```bash
-$ sudo chmod 755 /etc/rc.local
+sudo chmod 755 /etc/rc.local
 ```
    8. verificar se o firewall está funcionando
 ```bash
-$ sudo ufw status
+sudo ufw status
 ```
 ![WhatsApp Image 2022-12-28 at 13 51 34](https://user-images.githubusercontent.com/103062784/209849181-71578ac1-a157-441f-a499-38d7d6944337.jpeg)
 ou
 ```bash
-$ systemctl status ufw.service
+systemctl status ufw.service
 ```
 
    9.  reiniciar a máquina
 ```bash
-$ sudo reboot
+sudo reboot
 ```
    10. Nas máquinas SAMBA, NS1 e NS2 ativar o gateway (gateway4: 10.9.24.1) na interface de rede:
 ```bash
-$ sudo nano /etc/netplan/00-installer-config.yaml
+ sudo nano /etc/netplan/00-installer-config.yaml
 ```
 ```
 network:
@@ -190,27 +192,37 @@ network:
   ethernets:
     ens160:
       dhcp4: false
-      addresses: [10.9.24.120/24]
+      addresses: [10.9.24.120/28]
       gateway4: 10.9.24.1
       nameservers:
          addresses:
            - 10.9.24.120
            - 10.9.24.110
-      #     - 
-      #   search: []
+           - 10.9.24.103
+           - 10.9.24.118
+         search: [grupo1.turma924.ifalara.local]
 
     ens192:
       dhcp4: false
       addresses: [192.168.24.12/28]
+      nameservers:
+         addresses:
+           - 10.9.24.120
+           - 10.9.24.110
+           - 10.9.24.103
+           - 10.9.24.118
+         search: [grupo1.turma924.ifalara.local]
 
-
+  version: 2
 ```
-![image](https://user-images.githubusercontent.com/103062784/209986415-900d0370-3b00-433f-aeeb-79eab8ccaace.png)
+![image](https://user-images.githubusercontent.com/103062784/210075229-352dfc4d-686e-459e-9ba9-2df0a77e1b26.png)
 
 
 ```bash
-$ sudo netplan apply
-$ ifconfig -a
+ sudo netplan apply
+```
+```bash
+sudo netplan apply
 ```
 
   11. Encaminhamento de portas para acesso externo à serviços da rede interna.
