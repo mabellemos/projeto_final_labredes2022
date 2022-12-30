@@ -37,9 +37,6 @@ OBS: após o reboot o nome da máquina aparecerá no prompt do shell
 ```bash
 $ sudo nano /etc/netplan/00-installer-config.yaml
 ```
-
-![WhatsApp Image 2022-12-23 at 16 51 01](https://user-images.githubusercontent.com/103062733/209842982-0889fac3-a233-4545-b445-550b5b6538f7.jpeg)
-
 ```bash 
 network:
     ethernets:
@@ -49,7 +46,7 @@ network:
             dhcp4: false 
     version: 2
 ```
-
+![WhatsApp Image 2022-12-23 at 16 51 01](https://user-images.githubusercontent.com/103062733/209842982-0889fac3-a233-4545-b445-550b5b6538f7.jpeg)
 ```bash
 $ sudo netplan apply
 ```
