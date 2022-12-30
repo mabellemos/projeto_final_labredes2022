@@ -23,8 +23,7 @@ Tabela 1: Exemplo de nomes dos servidores
 Conferir os nomes das MV conforme a Tabela 1. Editar o nome da máquina
 
 ```bash
-$ sudo hostnamectl set-hostname samba-srv
-$ reboot
+ sudo hostnamectl set-hostname samba-srv
 ```
 
 ```bash
@@ -87,7 +86,7 @@ whereis samba
 ![image](https://user-images.githubusercontent.com/103062784/210072877-6dffa29f-22ab-4566-bee5-1f8090f5f6d1.png)
 
 ```bash
-$ sudo systemctl status smbd
+ sudo systemctl status smbd
 ```
 
 ```bash
@@ -111,16 +110,7 @@ smbd.service - Samba SMB Daemon
 ```
 ![image](https://user-images.githubusercontent.com/103062784/210073245-2b685775-dfb3-403a-b3a8-1875139c0c83.png)
 
-
-```bash
-$ netstat -an | grep LISTEN
-tcp        0      0 0.0.0.0:445             0.0.0.0:*               LISTEN     
-tcp        0      0 0.0.0.0:139             0.0.0.0:*               LISTEN   
-```
-![WhatsApp Image 2022-12-23 at 16 59 26](https://user-images.githubusercontent.com/103062733/209843243-a5903260-c4d1-4781-9f5a-7f4a6750f9aa.jpeg)
-
-
-    5. Faça o backup do arquivo de configuração do samba e cria um arquivo novo somente com os comandos necessários.
+ 5. Faça o backup do arquivo de configuração do samba e cria um arquivo novo somente com os comandos necessários.
     
 ```bash
 $ sudo cp /etc/samba/smb.conf{,.backup}
@@ -128,7 +118,6 @@ $ ls -la
 -rw-r--r--  1 root root 8942 Mar 22 20:55 smb.conf
 -rw-r--r--  1 root root 8942 Mar 23 01:42 smb.conf.backup
 
-$
 $ sudo bash -c 'grep -v -E "^#|^;" /etc/samba/smb.conf.backup | grep . > /etc/samba/smb.conf'
 ```
 ![WhatsApp Image 2022-12-23 at 17 02 23](https://user-images.githubusercontent.com/103062733/209843506-6c9d68ae-f3f2-4e43-9813-3188f85c2c15.jpeg)
