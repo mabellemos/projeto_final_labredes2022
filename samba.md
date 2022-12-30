@@ -127,6 +127,14 @@ $ sudo bash -c 'grep -v -E "^#|^;" /etc/samba/smb.conf.backup | grep . > /etc/sa
 ```
 ![WhatsApp Image 2022-12-23 at 17 02 23](https://user-images.githubusercontent.com/103062733/209843506-6c9d68ae-f3f2-4e43-9813-3188f85c2c15.jpeg)
 ```bash
+ 6. Edite o arquivo de configuração /etc/samba/smb.conf
+
+	* adicione as interfaces da sua máquina na linha "interfaces = ens160".
+  
+```bash
+$ sudo nano /etc/samba/smb.conf
+```
+![WhatsApp Image 2022-12-28 at 13 46 17](https://user-images.githubusercontent.com/103062733/209845075-0daee891-5224-470d-abb7-ab72be3e7ed1.jpeg)
 $ sudo nano /etc/samba/smb.conf
 ```
 
@@ -186,69 +194,10 @@ $ sudo nano /etc/samba/smb.conf
 
   
   
-  6. Edite o arquivo de configuração /etc/samba/smb.conf
-
-	* adicione as interfaces da sua máquina na linha "interfaces = 10.9.24.103/8 enp0s3", separando os nomes das interfaces por espaços.
-  
-```bash
-$ sudo nano /etc/samba/smb.conf
-```
-![WhatsApp Image 2022-12-28 at 13 46 17](https://user-images.githubusercontent.com/103062733/209845075-0daee891-5224-470d-abb7-ab72be3e7ed1.jpeg)
+ 
 
 
 ```
-[global]
-   workgroup = WORKGROUP
-   netbios name = samba-srv
-   security = user
-   server string = %h server (Samba, Ubuntu)
-   interfaces = 10.9.24.103/8 enp0s3
-   bind interfaces only = yes
-   log file = /var/log/samba/log.%m
-   max log size = 1000
-   logging = file
-   panic action = /usr/share/samba/panic-action %d
-   server role = standalone server
-   obey pam restrictions = yes
-   unix password sync = yes
-   passwd program = /usr/bin/passwd %u
-   passwd chat = *Enter\snew\s*\spassword:* %n\n *Retype\snew\s*\spassword:* %n\n *password\supdated\ssuccessfully* .
-   pam password change = yes
-   map to guest = bad user
-   usershare allow guests = yes
-[printers]
-   comment = All Printers
-   browseable = no
-   path = /var/spool/samba
-   printable = yes
-   guest ok = no
-   read only = yes
-   create mask = 0700
-[print$]
-   comment = Printer Drivers
-   path = /var/lib/samba/printers
-   browseable = yes
-   read only = yes
-   guest ok = no
-[homes]
-   comment = Home Directories
-   browseable = yes
-   read only = no
-   create mask = 0700
-   directory mask = 0700
-   valid users = %S
-[public]
-   comment = public anonymous access
-   path = /samba/public
-   browsable =yes
-   create mask = 0660
-   directory mask = 0771
-   writable = yes
-   guest ok = yes
-   guest only = yes
-   force user = nobody
-   force create mode = 0777
-   force directory mode = 0777
 ```
     * Renicie o serviço smbd
     
