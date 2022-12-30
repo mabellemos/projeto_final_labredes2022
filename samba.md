@@ -122,12 +122,10 @@ $ ls -la
 -rw-r--r--  1 root root 8942 Mar 22 20:55 smb.conf
 -rw-r--r--  1 root root 8942 Mar 23 01:42 smb.conf.backup
 
-![WhatsApp Image 2022-12-23 at 17 02 23](https://user-images.githubusercontent.com/103062733/209843506-6c9d68ae-f3f2-4e43-9813-3188f85c2c15.jpeg)
-
 $
 $ sudo bash -c 'grep -v -E "^#|^;" /etc/samba/smb.conf.backup | grep . > /etc/samba/smb.conf'
 ```
-
+![WhatsApp Image 2022-12-23 at 17 02 23](https://user-images.githubusercontent.com/103062733/209843506-6c9d68ae-f3f2-4e43-9813-3188f85c2c15.jpeg)
 ```bash
 $ sudo nano /etc/samba/smb.conf
 ```
