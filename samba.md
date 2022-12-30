@@ -40,8 +40,8 @@ $ sudo nano /etc/netplan/00-installer-config.yaml
 ```bash 
 network:
     ethernets:
-        enp0s3:
-            addresses: [10.9.24.103/24]
+        ens160:
+            addresses: [10.9.24.103/28]
             gateway4: 10.9.24.1
             dhcp4: false 
     version: 2
