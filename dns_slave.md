@@ -13,12 +13,12 @@ network:
     ethernets:
         ens160:                        # interface local
             addresses: [10.9.24.110/28]  # ip/mascara
-            gateway4: 10.9.14.1         # ip do gateway
+            gateway4: 10.9.24.1         # ip do gateway
             dhcp4: false               # 'false' para conf. estatica 
             nameservers:               # servidores dns
                 addresses:
-                - 10.9.14.120            # ip do ns1
-                - 10.9.14.110            # ip do ns2
+                - 10.9.24.120            # ip do ns1
+                - 10.9.24.110            # ip do ns2
                 search: [grupo1.turma924.ifalara.local]  # domínio
     version: 2
 ```
