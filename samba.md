@@ -188,8 +188,7 @@ $ sudo nano /etc/samba/smb.conf
 ```
 ![image](https://user-images.githubusercontent.com/103062784/210071502-c02d4e25-bc17-4913-9f03-8f6014972c17.png)
 
-```
-    * Renicie o serviço smbd
+  * Renicie o serviço smbd
     
 ```bash
 $ sudo systemctl restart smbd
