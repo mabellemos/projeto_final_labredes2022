@@ -171,7 +171,7 @@ $sudo named-checkconf
 
 ```bash
 $ cd /etc/bind/zones
-$ sudo named-checkzone grupo1.labredes.ifalara.local db.grupo1.turma924.ifalara.local
+$ sudo named-checkzone grupo1.turma924.ifalara.local db.grupo1.turma924.ifalara.local
 zone grupo1.turma924.ifalara.local/IN: loaded serial 1
 OK
 $ sudo named-checkzone 24.9.10.in-addr.arpa db.10.9.24.rev
