@@ -112,7 +112,7 @@ network:
 sudo netplan apply
 ```
 ```bash
-sudo netplan apply
+ifconfig -a
 ```
 
    5. no ubuntu 18.04 o arquivo /etc/rc.local não existe mais. Então é necessário recriá-lo.
@@ -222,7 +222,7 @@ network:
  sudo netplan apply
 ```
 ```bash
-sudo netplan apply
+ifconfig -a
 ```
 
   11. Encaminhamento de portas para acesso externo à serviços da rede interna.
